@@ -1,0 +1,127 @@
+/* Membership Page Styles */
+.membership-intro {
+  max-width: 800px;
+  margin: 0 auto var(--spacing-2xl);
+  text-align: center;
+}
+
+.lead-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--dark-gray);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.category-features {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-md) 0 0;
+}
+
+.category-features li {
+  padding: var(--spacing-xs) 0;
+  font-size: 0.9rem;
+  color: var(--medium-gray);
+}
+
+.fees-table {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.fee-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--medium-gray);
+  margin-top: var(--spacing-md);
+  font-style: italic;
+}
+
+.apply-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+  max-width: 1100px;
+  margin: 0 auto var(--spacing-2xl);
+}
+
+.step {
+  text-align: center;
+  padding: var(--spacing-lg);
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--gold);
+  color: var(--navy-blue);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.step h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-bottom: var(--spacing-sm);
+}
+
+.step p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.apply-cta {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .apply-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-grid,
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .apply-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .apply-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+}
