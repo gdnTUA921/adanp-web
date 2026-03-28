@@ -1,3 +1,4 @@
+import { FaBook, FaUserMd, FaUsers, FaChartBar, FaGraduationCap, FaGlobe, FaMicroscope, FaVideo, FaMobileAlt, FaBookOpen } from 'react-icons/fa';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Card from '../components/Card';
@@ -26,19 +27,19 @@ function Education() {
         <div className="msn-content">
           <div className="msn-description">
             <p className="lead-text">
-              Our Master of Science in Nursing program with specialization in 
-              Dermatology & Aesthetic Nursing provides advanced education for 
+              Our Master of Science in Nursing program with specialization in
+              Dermatology & Aesthetic Nursing provides advanced education for
               nurses seeking to become leaders in this specialized field.
             </p>
             <p>
-              This comprehensive program combines theoretical knowledge with 
-              hands-on clinical training, preparing graduates for advanced 
-              practice roles in dermatology clinics, aesthetic centers, 
+              This comprehensive program combines theoretical knowledge with
+              hands-on clinical training, preparing graduates for advanced
+              practice roles in dermatology clinics, aesthetic centers,
               academic institutions, and research facilities.
             </p>
           </div>
           <div className="msn-details">
-            <InfoBox icon="📚" title="Program Details" variant="light">
+            <InfoBox icon={<FaBook />} title="Program Details" variant="light">
               <ul>
                 <li><strong>Duration:</strong> 2 years (full-time)</li>
                 <li><strong>Format:</strong> Hybrid (online + clinical)</li>
@@ -54,50 +55,50 @@ function Education() {
           <h3 className="outcome-title">Learning Outcomes</h3>
           <div className="outcomes-grid">
             <div className="outcome-item">
-              <span className="outcome-icon">🔬</span>
+              <span className="outcome-icon"><FaMicroscope /></span>
               <h4>Advanced Clinical Knowledge</h4>
               <p>
-                Demonstrate expertise in diagnosing and managing complex 
+                Demonstrate expertise in diagnosing and managing complex
                 dermatological conditions and aesthetic procedures.
               </p>
             </div>
             <div className="outcome-item">
-              <span className="outcome-icon">⚕️</span>
+              <span className="outcome-icon"><FaUserMd /></span>
               <h4>Evidence-Based Practice</h4>
               <p>
-                Apply current research and evidence-based guidelines to 
+                Apply current research and evidence-based guidelines to
                 optimize patient outcomes in dermatology care.
               </p>
             </div>
             <div className="outcome-item">
-              <span className="outcome-icon">👥</span>
+              <span className="outcome-icon"><FaUsers /></span>
               <h4>Leadership Skills</h4>
               <p>
-                Lead interdisciplinary teams and advocate for patients 
+                Lead interdisciplinary teams and advocate for patients
                 in dermatology and aesthetic healthcare settings.
               </p>
             </div>
             <div className="outcome-item">
-              <span className="outcome-icon">📊</span>
+              <span className="outcome-icon"><FaChartBar /></span>
               <h4>Research Competency</h4>
               <p>
-                Design and conduct research studies to advance the 
+                Design and conduct research studies to advance the
                 science of dermatology nursing practice.
               </p>
             </div>
             <div className="outcome-item">
-              <span className="outcome-icon">🎓</span>
+              <span className="outcome-icon"><FaGraduationCap /></span>
               <h4>Education & Mentorship</h4>
               <p>
-                Educate patients, families, and healthcare professionals 
+                Educate patients, families, and healthcare professionals
                 on dermatology and aesthetic nursing topics.
               </p>
             </div>
             <div className="outcome-item">
-              <span className="outcome-icon">🌍</span>
+              <span className="outcome-icon"><FaGlobe /></span>
               <h4>Professional Ethics</h4>
               <p>
-                Uphold ethical standards and cultural sensitivity in 
+                Uphold ethical standards and cultural sensitivity in
                 all aspects of dermatology nursing practice.
               </p>
             </div>
@@ -116,23 +117,23 @@ function Education() {
         <div className="cpd-grid">
           <Card title="Workshops & Seminars" subtitle="Hands-On Learning">
             <p>
-              Participate in intensive workshops covering laser therapy, 
-              chemical peels, microneedling, injectables, and other 
+              Participate in intensive workshops covering laser therapy,
+              chemical peels, microneedling, injectables, and other
               advanced aesthetic procedures.
             </p>
             <Button variant="outline-navy" size="small">View Schedule</Button>
           </Card>
           <Card title="Online Courses" subtitle="Flexible Learning">
             <p>
-              Access self-paced online modules covering dermatology 
-              fundamentals, pharmacology, patient assessment, and 
+              Access self-paced online modules covering dermatology
+              fundamentals, pharmacology, patient assessment, and
               safety protocols.
             </p>
             <Button variant="outline-navy" size="small">Browse Courses</Button>
           </Card>
           <Card title="Annual Convention" subtitle="Premier Event">
             <p>
-              Join our annual national convention featuring renowned 
+              Join our annual national convention featuring renowned
               speakers, scientific sessions, and networking opportunities.
             </p>
             <Button variant="outline-navy" size="small">Learn More</Button>
@@ -147,10 +148,10 @@ function Education() {
         </div>
         <div className="research-content">
           <div className="research-info">
-            <InfoBox icon="🔬" title="Research Initiatives" variant="default">
+            <InfoBox icon={<FaMicroscope />} title="Research Initiatives" variant="default">
               <p>
-                ADANP supports and promotes research in dermatology and 
-                aesthetic nursing through grants, mentorship, and 
+                ADANP supports and promotes research in dermatology and
+                aesthetic nursing through grants, mentorship, and
                 publication opportunities.
               </p>
               <ul>
@@ -164,8 +165,8 @@ function Education() {
           <div className="research-journal">
             <h3>ADANP Journal</h3>
             <p>
-              The official publication of ADANP features peer-reviewed 
-              articles, case studies, and research findings in dermatology 
+              The official publication of ADANP features peer-reviewed
+              articles, case studies, and research findings in dermatology
               and aesthetic nursing.
             </p>
             <ul className="journal-features">
@@ -215,21 +216,21 @@ function Education() {
           <h2 className="section-title">Educational Resources</h2>
         </div>
         <div className="resources-grid">
-          <InfoBox icon="📖" title="Digital Library" variant="default">
+          <InfoBox icon={<FaBookOpen />} title="Digital Library" variant="default">
             <p>
-              Access our comprehensive digital library with textbooks, 
+              Access our comprehensive digital library with textbooks,
               journals, guidelines, and clinical resources.
             </p>
           </InfoBox>
-          <InfoBox icon="🎥" title="Video Library" variant="default">
+          <InfoBox icon={<FaVideo />} title="Video Library" variant="default">
             <p>
-              Watch procedural videos, lecture recordings, and 
+              Watch procedural videos, lecture recordings, and
               demonstration videos from expert practitioners.
             </p>
           </InfoBox>
-          <InfoBox icon="📱" title="Mobile App" variant="default">
+          <InfoBox icon={<FaMobileAlt />} title="Mobile App" variant="default">
             <p>
-              Download the ADANP mobile app for on-the-go access 
+              Download the ADANP mobile app for on-the-go access
               to resources, news, and member community.
             </p>
           </InfoBox>

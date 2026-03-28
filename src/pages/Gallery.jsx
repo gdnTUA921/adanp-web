@@ -1,3 +1,4 @@
+import { FaCamera, FaPlay } from 'react-icons/fa';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import './Gallery.css';
@@ -50,7 +51,7 @@ function Gallery() {
           {galleryImages.map((image) => (
             <div key={image.id} className="photo-item">
               <div className="photo-placeholder">
-                <span className="photo-icon">📷</span>
+                <span className="photo-icon"><FaCamera /></span>
               </div>
               <div className="photo-info">
                 <span className="photo-category">{image.category}</span>
@@ -73,7 +74,7 @@ function Gallery() {
           {videos.map((video) => (
             <div key={video.id} className="video-item">
               <div className="video-placeholder">
-                <div className="play-button">▶</div>
+                <div className="play-button"><FaPlay /></div>
                 <span className="video-duration">{video.duration}</span>
               </div>
               <h4>{video.title}</h4>
@@ -90,7 +91,7 @@ function Gallery() {
         <div className="share-cta text-center">
           <h3>Share Your ADANP Moments</h3>
           <p>
-            Were you at an ADANP event? Share your photos with us! 
+            Were you at an ADANP event? Share your photos with us!
             We'd love to feature your pictures in our gallery.
           </p>
           <a href="mailto:secretariat@adanp.org" className="btn btn-primary btn-large">

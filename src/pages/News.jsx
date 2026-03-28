@@ -1,3 +1,4 @@
+import { FaMapMarkerAlt, FaFileDownload, FaTrophy, FaStar, FaMicroscope } from 'react-icons/fa';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Card from '../components/Card';
@@ -81,7 +82,7 @@ function News() {
         </div>
         <div className="news-grid">
           {newsItems.map((item) => (
-            <Card 
+            <Card
               key={item.id}
               title={item.title}
               subtitle={`${item.category} • ${item.date}`}
@@ -110,7 +111,7 @@ function News() {
                   <div className="event-date">{event.date}</div>
                   <div className="event-details">
                     <h4>{event.event}</h4>
-                    <span className="event-location">📍 {event.location}</span>
+                    <span className="event-location"><FaMapMarkerAlt /> {event.location}</span>
                   </div>
                 </li>
               ))}
@@ -119,7 +120,7 @@ function News() {
           <div className="calendar-cta">
             <h3>Host an Event</h3>
             <p>
-              Interested in hosting an ADANP event in your region? 
+              Interested in hosting an ADANP event in your region?
               Contact us to learn more about bringing our programs to your area.
             </p>
             <a href="/contact" className="btn btn-primary">Contact Us</a>
@@ -140,19 +141,19 @@ function News() {
             <span className="release-date">January 2026</span>
             <h4>ADANP Statement on Aesthetic Procedure Safety Standards</h4>
             <p>
-              The Association reaffirms its commitment to patient safety and 
+              The Association reaffirms its commitment to patient safety and
               professional standards in aesthetic nursing practice.
             </p>
-            <a href="#" className="download-link">📄 Download PDF</a>
+            <a href="#" className="download-link"><FaFileDownload /> Download PDF</a>
           </div>
           <div className="release-item">
             <span className="release-date">December 2025</span>
             <h4>ADANP Welcomes New PRC Guidelines for Dermatology Nursing</h4>
             <p>
-              The association expresses support for new regulatory frameworks 
+              The association expresses support for new regulatory frameworks
               that enhance professional standards.
             </p>
-            <a href="#" className="download-link">📄 Download PDF</a>
+            <a href="#" className="download-link"><FaFileDownload /> Download PDF</a>
           </div>
         </div>
       </Section>
@@ -167,26 +168,26 @@ function News() {
         </div>
         <div className="awards-grid">
           <div className="award-item">
-            <span className="award-icon">🏆</span>
+            <span className="award-icon"><FaTrophy /></span>
             <h4>Nurse of the Year Award</h4>
             <p>
-              Recognizing outstanding contributions to dermatology and 
+              Recognizing outstanding contributions to dermatology and
               aesthetic nursing practice.
             </p>
           </div>
           <div className="award-item">
-            <span className="award-icon">⭐</span>
+            <span className="award-icon"><FaStar /></span>
             <h4>Excellence in Education Award</h4>
             <p>
-              Honoring members who demonstrate exceptional commitment 
+              Honoring members who demonstrate exceptional commitment
               to education and mentorship.
             </p>
           </div>
           <div className="award-item">
-            <span className="award-icon">🔬</span>
+            <span className="award-icon"><FaMicroscope /></span>
             <h4>Research Achievement Award</h4>
             <p>
-              Celebrating significant contributions to dermatology 
+              Celebrating significant contributions to dermatology
               nursing research.
             </p>
           </div>

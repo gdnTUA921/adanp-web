@@ -1,3 +1,4 @@
+import { FaGraduationCap, FaHospital, FaBuilding, FaGlobeAmericas, FaBriefcase, FaClipboardList } from 'react-icons/fa';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Card from '../components/Card';
@@ -24,33 +25,33 @@ function WorkWithUs() {
         </div>
         <div className="partners-intro">
           <p>
-            ADANP partners with academic institutions, healthcare organizations, 
-            industry leaders, and international associations to provide our 
+            ADANP partners with academic institutions, healthcare organizations,
+            industry leaders, and international associations to provide our
             members with the best resources, opportunities, and support.
           </p>
         </div>
         <div className="partner-types">
-          <InfoBox icon="🎓" title="Academic Partners" variant="default">
+          <InfoBox icon={<FaGraduationCap />} title="Academic Partners" variant="default">
             <p>
-              Universities and colleges offering dermatology nursing programs 
+              Universities and colleges offering dermatology nursing programs
               and continuing education courses.
             </p>
           </InfoBox>
-          <InfoBox icon="🏥" title="Healthcare Institutions" variant="default">
+          <InfoBox icon={<FaHospital />} title="Healthcare Institutions" variant="default">
             <p>
-              Hospitals, clinics, and medical centers providing clinical 
+              Hospitals, clinics, and medical centers providing clinical
               training and employment opportunities.
             </p>
           </InfoBox>
-          <InfoBox icon="🏢" title="Industry Partners" variant="default">
+          <InfoBox icon={<FaBuilding />} title="Industry Partners" variant="default">
             <p>
-              Pharmaceutical companies and medical device manufacturers 
+              Pharmaceutical companies and medical device manufacturers
               supporting education and research.
             </p>
           </InfoBox>
-          <InfoBox icon="🌏" title="International Associations" variant="default">
+          <InfoBox icon={<FaGlobeAmericas />} title="International Associations" variant="default">
             <p>
-              Global dermatology nursing organizations facilitating 
+              Global dermatology nursing organizations facilitating
               knowledge exchange and collaboration.
             </p>
           </InfoBox>
@@ -70,20 +71,20 @@ function WorkWithUs() {
             <h3>Why Advertise with ADANP?</h3>
             <ul className="advertise-benefits">
               <li>
-                <strong>Targeted Audience:</strong> Reach dermatology and 
-                aesthetic nursing professionals actively seeking products 
+                <strong>Targeted Audience:</strong> Reach dermatology and
+                aesthetic nursing professionals actively seeking products
                 and services.
               </li>
               <li>
-                <strong>Multiple Channels:</strong> Advertise through our 
+                <strong>Multiple Channels:</strong> Advertise through our
                 journal, website, newsletter, and events.
               </li>
               <li>
-                <strong>Brand Association:</strong> Align your brand with 
+                <strong>Brand Association:</strong> Align your brand with
                 professional excellence and education.
               </li>
               <li>
-                <strong>Engagement Opportunities:</strong> Sponsor events, 
+                <strong>Engagement Opportunities:</strong> Sponsor events,
                 workshops, and certification programs.
               </li>
             </ul>
@@ -91,19 +92,19 @@ function WorkWithUs() {
           <div className="advertise-options">
             <Card title="Journal Advertising" subtitle="Print & Digital">
               <p>
-                Place your advertisement in the ADANP quarterly journal, 
+                Place your advertisement in the ADANP quarterly journal,
                 reaching all members nationwide.
               </p>
             </Card>
             <Card title="Website Banner" subtitle="Online Presence">
               <p>
-                Feature your brand on our website with strategic banner 
+                Feature your brand on our website with strategic banner
                 placements for maximum visibility.
               </p>
             </Card>
             <Card title="Event Sponsorship" subtitle="Direct Engagement">
               <p>
-                Sponsor our annual convention, workshops, or regional 
+                Sponsor our annual convention, workshops, or regional
                 events to connect directly with attendees.
               </p>
             </Card>
@@ -126,10 +127,10 @@ function WorkWithUs() {
         </div>
         <div className="recruitment-content">
           <div className="recruitment-info">
-            <InfoBox icon="💼" title="For Employers" variant="default">
+            <InfoBox icon={<FaBriefcase />} title="For Employers" variant="default">
               <p>
-                ADANP connects employers with qualified dermatology and 
-                aesthetic nursing professionals through our job board 
+                ADANP connects employers with qualified dermatology and
+                aesthetic nursing professionals through our job board
                 and recruitment services.
               </p>
               <ul>
@@ -141,9 +142,9 @@ function WorkWithUs() {
             </InfoBox>
           </div>
           <div className="recruitment-info">
-            <InfoBox icon="📋" title="For Job Seekers" variant="default">
+            <InfoBox icon={<FaClipboardList />} title="For Job Seekers" variant="default">
               <p>
-                ADANP members have access to exclusive job postings 
+                ADANP members have access to exclusive job postings
                 and career development resources.
               </p>
               <ul>
@@ -162,7 +163,7 @@ function WorkWithUs() {
         <div className="contact-partnership text-center">
           <h3>Interested in Partnering with ADANP?</h3>
           <p>
-            Whether you want to advertise, recruit, or establish a 
+            Whether you want to advertise, recruit, or establish a
             partnership, we'd love to hear from you.
           </p>
           <div className="contact-emails">

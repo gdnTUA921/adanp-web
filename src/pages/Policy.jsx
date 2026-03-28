@@ -1,3 +1,4 @@
+import { FaBalanceScale, FaClipboardList, FaShieldAlt, FaScroll, FaLandmark, FaEnvelope } from 'react-icons/fa';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import InfoBox from '../components/InfoBox';
@@ -23,62 +24,62 @@ function Policy() {
           </p>
         </div>
         <div className="concerns-grid">
-          <InfoBox 
-            icon="⚖️" 
+          <InfoBox
+            icon={<FaBalanceScale />}
             title="Scope of Practice"
             variant="default"
           >
             <p>
-              ADANP advocates for clear guidelines defining the scope of practice 
-              for dermatology and aesthetic nurses, ensuring patient safety and 
+              ADANP advocates for clear guidelines defining the scope of practice
+              for dermatology and aesthetic nurses, ensuring patient safety and
               professional accountability.
             </p>
           </InfoBox>
-          <InfoBox 
-            icon="📋" 
+          <InfoBox
+            icon={<FaClipboardList />}
             title="Standards of Care"
             variant="default"
           >
             <p>
-              We develop and promote evidence-based standards of care for 
-              dermatology and aesthetic procedures, protecting both patients 
+              We develop and promote evidence-based standards of care for
+              dermatology and aesthetic procedures, protecting both patients
               and practitioners.
             </p>
           </InfoBox>
-          <InfoBox 
-            icon="🛡️" 
+          <InfoBox
+            icon={<FaShieldAlt />}
             title="Patient Safety"
             variant="default"
           >
             <p>
-              Patient safety is our paramount concern. We advocate for proper 
+              Patient safety is our paramount concern. We advocate for proper
               training, certification, and oversight in all aesthetic procedures.
             </p>
           </InfoBox>
-          <InfoBox 
-            icon="📜" 
+          <InfoBox
+            icon={<FaScroll />}
             title="Ethical Practice"
             variant="default"
           >
             <p>
-              ADANP promotes ethical practice standards, including informed 
-              consent, honest marketing, and appropriate patient selection 
+              ADANP promotes ethical practice standards, including informed
+              consent, honest marketing, and appropriate patient selection
               for procedures.
             </p>
           </InfoBox>
-          <InfoBox 
-            icon="🏛️" 
+          <InfoBox
+            icon={<FaLandmark />}
             title="Regulatory Affairs"
             variant="default"
           >
             <p>
-              We work with regulatory bodies including the PRC to ensure 
-              fair and appropriate regulation of dermatology and aesthetic 
+              We work with regulatory bodies including the PRC to ensure
+              fair and appropriate regulation of dermatology and aesthetic
               nursing practice.
             </p>
           </InfoBox>
-          <InfoBox 
-            icon="📧" 
+          <InfoBox
+            icon={<FaEnvelope />}
             title="Contact Us"
             variant="navy"
           >

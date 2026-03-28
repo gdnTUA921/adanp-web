@@ -1,3 +1,4 @@
+import { FaPhone, FaEnvelope, FaClipboardList, FaGraduationCap, FaHandshake, FaLaptop, FaCoins, FaBullhorn, FaMapMarkerAlt } from 'react-icons/fa';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import ContactForm from '../components/ContactForm';
@@ -32,13 +33,13 @@ function Contact() {
           <div className="contact-info-section">
             <h3 className="info-title">Contact Information</h3>
             <div className="info-cards">
-              <InfoBox icon="📞" title="Phone" variant="light">
+              <InfoBox icon={<FaPhone />} title="Phone" variant="light">
                 <p><strong>Landline:</strong></p>
                 <p>(02) 899 6471</p>
                 <p><strong>Mobile:</strong></p>
                 <p>0945 5933868</p>
               </InfoBox>
-              <InfoBox icon="📧" title="General Inquiries" variant="light">
+              <InfoBox icon={<FaEnvelope />} title="General Inquiries" variant="light">
                 <a href="mailto:admin@adanp.org">admin@adanp.org</a>
                 <a href="mailto:secretariat@adanp.org">secretariat@adanp.org</a>
               </InfoBox>
@@ -57,37 +58,37 @@ function Contact() {
         </div>
         <div className="departments-grid">
           <div className="department-card">
-            <span className="dept-icon">📋</span>
+            <span className="dept-icon"><FaClipboardList /></span>
             <h4>Membership</h4>
             <a href="mailto:membership@adanp.org">membership@adanp.org</a>
             <p>For membership applications, renewals, and benefits inquiries.</p>
           </div>
           <div className="department-card">
-            <span className="dept-icon">🎓</span>
+            <span className="dept-icon"><FaGraduationCap /></span>
             <h4>Certification</h4>
             <a href="mailto:professionalconcerns@adanp.org">professionalconcerns@adanp.org</a>
             <p>For certification programs, exams, and professional concerns.</p>
           </div>
           <div className="department-card">
-            <span className="dept-icon">🤝</span>
+            <span className="dept-icon"><FaHandshake /></span>
             <h4>Partnership</h4>
             <a href="mailto:partnership@adanp.org">partnership@adanp.org</a>
             <p>For partnership opportunities and collaborations.</p>
           </div>
           <div className="department-card">
-            <span className="dept-icon">💻</span>
+            <span className="dept-icon"><FaLaptop /></span>
             <h4>Technical Support</h4>
             <a href="mailto:techsupport@adanp.org">techsupport@adanp.org</a>
             <p>For website issues and technical assistance.</p>
           </div>
           <div className="department-card">
-            <span className="dept-icon">💰</span>
+            <span className="dept-icon"><FaCoins /></span>
             <h4>Accounting</h4>
             <a href="mailto:accounting@adanp.org">accounting@adanp.org</a>
             <p>For payment inquiries and financial matters.</p>
           </div>
           <div className="department-card">
-            <span className="dept-icon">📢</span>
+            <span className="dept-icon"><FaBullhorn /></span>
             <h4>Professional Concerns</h4>
             <a href="mailto:professionalconcerns@adanp.org">professionalconcerns@adanp.org</a>
             <p>For advocacy, policy, and professional issues.</p>
@@ -102,18 +103,18 @@ function Contact() {
         </div>
         <div className="officer-contact-info">
           <p className="lead-text">
-            To contact specific board members or national officers, please use 
+            To contact specific board members or national officers, please use
             the following email format:
           </p>
           <div className="email-format-box">
             <code>firstname.lastname@adanp.org</code>
           </div>
           <p className="example-text">
-            Example: For President Maria Santos, email would be 
+            Example: For President Maria Santos, email would be
             <code>maria.santos@adanp.org</code>
           </p>
           <p className="note-text">
-            For general inquiries, please contact the secretariat first at 
+            For general inquiries, please contact the secretariat first at
             <a href="mailto:secretariat@adanp.org"> secretariat@adanp.org</a>
           </p>
         </div>
@@ -129,7 +130,7 @@ function Contact() {
         </div>
         <div className="map-placeholder">
           <div className="map-content">
-            <span className="map-icon">📍</span>
+            <span className="map-icon"><FaMapMarkerAlt /></span>
             <h4>ADANP National Office</h4>
             <p>Philippines</p>
             <p className="hours">Office Hours: Monday - Friday, 9:00 AM - 5:00 PM</p>

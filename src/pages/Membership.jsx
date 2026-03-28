@@ -1,3 +1,4 @@
+import { FaGraduationCap, FaScroll, FaHandshake, FaBook, FaTrophy, FaBriefcase } from 'react-icons/fa';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Card from '../components/Card';
@@ -59,35 +60,35 @@ function Membership() {
         </div>
         <div className="membership-intro">
           <p className="lead-text">
-            Becoming a member of ADANP connects you with a vibrant community of 
-            dermatology and aesthetic nursing professionals dedicated to excellence 
+            Becoming a member of ADANP connects you with a vibrant community of
+            dermatology and aesthetic nursing professionals dedicated to excellence
             in patient care and professional development.
           </p>
         </div>
-        
+
         <div className="benefits-grid">
-          <InfoBox icon="🎓" title="Professional Development">
-            Access exclusive continuing professional development (CPD) programs, 
+          <InfoBox icon={<FaGraduationCap />} title="Professional Development">
+            Access exclusive continuing professional development (CPD) programs,
             workshops, and seminars to enhance your skills.
           </InfoBox>
-          <InfoBox icon="📜" title="Certification Pathways">
-            Eligibility for CAN, DNP, and FADANP certification programs that 
+          <InfoBox icon={<FaScroll />} title="Certification Pathways">
+            Eligibility for CAN, DNP, and FADANP certification programs that
             advance your career.
           </InfoBox>
-          <InfoBox icon="🤝" title="Networking">
-            Connect with fellow professionals, mentors, and industry leaders 
+          <InfoBox icon={<FaHandshake />} title="Networking">
+            Connect with fellow professionals, mentors, and industry leaders
             through events and online communities.
           </InfoBox>
-          <InfoBox icon="📚" title="Resources">
-            Receive the ADANP journal, newsletters, and access to a comprehensive 
+          <InfoBox icon={<FaBook />} title="Resources">
+            Receive the ADANP journal, newsletters, and access to a comprehensive
             library of dermatology resources.
           </InfoBox>
-          <InfoBox icon="🏆" title="Recognition">
-            Opportunities for awards, leadership roles, and recognition within 
+          <InfoBox icon={<FaTrophy />} title="Recognition">
+            Opportunities for awards, leadership roles, and recognition within
             the dermatology nursing community.
           </InfoBox>
-          <InfoBox icon="💼" title="Career Support">
-            Job postings, recruitment assistance, and career development resources 
+          <InfoBox icon={<FaBriefcase />} title="Career Support">
+            Job postings, recruitment assistance, and career development resources
             for members at all stages.
           </InfoBox>
         </div>

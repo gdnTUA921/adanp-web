@@ -40,10 +40,10 @@ function Navbar() {
       <div className="navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
           <img src={logo} alt="ADANP Logo" className="navbar-logo-img" />
-          <span className="navbar-logo-text">
+          <div className="navbar-logo-text">
             <strong>ADANP</strong>
             <span className="navbar-logo-subtitle">Association of Dermatology & Aesthetic Nurses of the Philippines</span>
-          </span>
+          </div>
         </Link>
 
         <button

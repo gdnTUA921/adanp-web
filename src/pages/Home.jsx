@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { FaBullseye, FaEye, FaStar, FaHandshake, FaScroll, FaGraduationCap, FaHeart } from 'react-icons/fa';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Card from '../components/Card';
@@ -25,20 +26,20 @@ function Home() {
         </div>
         <div className="home-intro">
           <p className="lead-text">
-            The Association of Dermatology and Aesthetic Nurses of the Philippines (ADANP) 
-            is the premier professional organization dedicated to advancing the practice 
+            The Association of Dermatology and Aesthetic Nurses of the Philippines (ADANP)
+            is the premier professional organization dedicated to advancing the practice
             of dermatology and aesthetic nursing in the Philippines.
           </p>
           <p>
-            We are committed to empowering Filipino nurses through education, certification, 
-            and professional development programs that uphold the highest standards of 
+            We are committed to empowering Filipino nurses through education, certification,
+            and professional development programs that uphold the highest standards of
             patient care and safety in dermatology and aesthetic practice.
           </p>
         </div>
         <div className="home-cta-grid grid-3">
           <Card title="Certification Programs" subtitle="Advance Your Career">
             <p>
-              Become a Certified Aesthetic Nurse (CAN), Dermatology Nurse Practitioner (DNP), 
+              Become a Certified Aesthetic Nurse (CAN), Dermatology Nurse Practitioner (DNP),
               or join our Fellowship Program (FADANP).
             </p>
             <Link to="/certification" className="btn btn-outline-navy btn-small">
@@ -47,7 +48,7 @@ function Home() {
           </Card>
           <Card title="Membership" subtitle="Join Our Community">
             <p>
-              Connect with fellow professionals, access exclusive resources, and grow 
+              Connect with fellow professionals, access exclusive resources, and grow
               your network in dermatology and aesthetic nursing.
             </p>
             <Link to="/membership" className="btn btn-outline-navy btn-small">
@@ -56,7 +57,7 @@ function Home() {
           </Card>
           <Card title="Education" subtitle="Continuous Learning">
             <p>
-              Access continuing professional development, seminars, and research 
+              Access continuing professional development, seminars, and research
               opportunities to stay at the forefront of your field.
             </p>
             <Link to="/education" className="btn btn-outline-navy btn-small">
@@ -72,23 +73,23 @@ function Home() {
           <h2 className="section-title">Our Purpose</h2>
         </div>
         <div className="mission-vision-grid grid-2">
-          <InfoBox 
-            icon="🎯" 
+          <InfoBox
+            icon={<FaBullseye />}
             title="Our Mission"
             variant="default"
           >
             <p>
-              To lead Filipino nurses in providing advanced quality care through 
+              To lead Filipino nurses in providing advanced quality care through
               competency-based dermatology and aesthetic nursing education and certification.
             </p>
           </InfoBox>
-          <InfoBox 
-            icon="👁️" 
+          <InfoBox
+            icon={<FaEye />}
             title="Our Vision"
             variant="default"
           >
             <p>
-              To empower Filipino nurses to uphold professional standards in patient 
+              To empower Filipino nurses to uphold professional standards in patient
               care and safety within dermatology and aesthetic practice.
             </p>
           </InfoBox>
@@ -107,23 +108,23 @@ function Home() {
         </div>
         <div className="values-grid grid-5">
           <div className="value-item">
-            <span className="value-icon">⭐</span>
+            <span className="value-icon"><FaStar /></span>
             <h4>Excellence</h4>
           </div>
           <div className="value-item">
-            <span className="value-icon">🤝</span>
+            <span className="value-icon"><FaHandshake /></span>
             <h4>Integrity</h4>
           </div>
           <div className="value-item">
-            <span className="value-icon">📜</span>
+            <span className="value-icon"><FaScroll /></span>
             <h4>Professionalism</h4>
           </div>
           <div className="value-item">
-            <span className="value-icon">🎓</span>
+            <span className="value-icon"><FaGraduationCap /></span>
             <h4>Competency</h4>
           </div>
           <div className="value-item">
-            <span className="value-icon">❤️</span>
+            <span className="value-icon"><FaHeart /></span>
             <h4>Service</h4>
           </div>
         </div>
