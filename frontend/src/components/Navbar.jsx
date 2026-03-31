@@ -69,6 +69,15 @@ function Navbar() {
               </Link>
             </li>
           ))}
+          <li className="navbar-item nav-login-wrapper">
+            <Link
+              to="/login"
+              className="navbar-link nav-login-btn"
+              onClick={closeMobileMenu}
+            >
+              Login
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

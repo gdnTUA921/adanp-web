@@ -85,10 +85,9 @@
 
 .navbar-link {
   display: block;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.5rem;
   font-family: var(--font-body);
   font-size: 0.85rem;
-  /* Smaller font to fit more */
   font-weight: 600;
   color: var(--navy-blue);
   text-decoration: none;
@@ -120,25 +119,40 @@
   background-color: rgba(212, 166, 74, 0.1);
 }
 
-/* CTA style for the last item (Contact) */
-.navbar-item:last-child .navbar-link {
-  background-color: var(--gold);
+/* CTA Style is removed, Contact now looks like default links */
+
+/* Login Button Breathing Highlights */
+.nav-login-wrapper .nav-login-btn {
+  background-color: var(--navy-blue);
   color: var(--white);
-  padding: 0.5rem 1.25rem;
+  padding: 0.5rem 1.5rem;
   margin-left: 0.5rem;
   border-radius: 50px;
   font-weight: 700;
-  box-shadow: 0 4px 10px rgba(212, 166, 74, 0.3);
+  box-shadow: 0 0 10px rgba(31, 53, 94, 0.5);
+  animation: breatheHighlight 2s infinite alternate ease-in-out;
 }
 
-.navbar-item:last-child .navbar-link:hover {
-  background-color: var(--gold-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 15px rgba(212, 166, 74, 0.4);
+.nav-login-wrapper .nav-login-btn:hover {
+  background-color: #1a2c4e;
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(246, 171, 54, 0.9), 0 0 15px rgba(31, 53, 94, 0.8);
 }
 
-.navbar-item:last-child .navbar-link::after {
+.nav-login-wrapper .nav-login-btn::after {
   display: none;
+}
+
+@keyframes breatheHighlight {
+  0% {
+    box-shadow: 0 0 8px rgba(31, 53, 94, 0.4);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(246, 171, 54, 0.7), 0 0 8px rgba(31, 53, 94, 0.6);
+    transform: scale(1.03);
+    color: #fff8eb;
+  }
 }
 
 .navbar-link.active::after {
