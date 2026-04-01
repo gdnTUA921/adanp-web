@@ -10,7 +10,6 @@ import Education from './pages/Education';
 import Policy from './pages/Policy';
 import News from './pages/News';
 import Gallery from './pages/Gallery';
-import GalleryAdmin from './pages/GalleryAdmin';
 import WorkWithUs from './pages/WorkWithUs';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
@@ -18,12 +17,11 @@ import Login from './pages/Login';
 function AppContent() {
   const location = useLocation();
   const isLoginPage = location.pathname === '/login';
-  const isGalleryAdminPage = location.pathname === '/gallery-admin' || location.pathname === '/Gallery-admin';
 
   return (
     <div className="app">
-      {!isLoginPage && !isGalleryAdminPage && <a href="#main-content" className="skip-link">Skip to main content</a>}
-      {!isLoginPage && !isGalleryAdminPage && <Navbar />}
+      {!isLoginPage && <a href="#main-content" className="skip-link">Skip to main content</a>}
+      {!isLoginPage && <Navbar />}
       <main id="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -35,14 +33,12 @@ function AppContent() {
           <Route path="/policy" element={<Policy />} />
           <Route path="/news" element={<News />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/gallery-admin" element={<GalleryAdmin />} />
-          <Route path="/Gallery-admin" element={<GalleryAdmin />} />
           <Route path="/work-with-us" element={<WorkWithUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       </main>
-      {!isLoginPage && !isGalleryAdminPage && <Footer />}
+      {!isLoginPage && <Footer />}
     </div>
   );
 }
