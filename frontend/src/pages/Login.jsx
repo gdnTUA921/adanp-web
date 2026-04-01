@@ -5,11 +5,36 @@ import './Login.css';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
+  const [successMsg, setSuccessMsg] = useState('');
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Add login logic here later
-    console.log('Login attempt:', { email, password });
+    setErrorMsg('');
+    setSuccessMsg('');
+    
+    try {
+      const response = await fetch("http://localhost:8000/adanp-back/login.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.status === "success") {
+        setSuccessMsg(data.message);
+        console.log('Login successful:', data.user);
+        // Add redirect after successful login here if needed later
+      } else {
+        setErrorMsg(data.message || "An error occurred during login.");
+      }
+    } catch (error) {
+      console.error("Login Error:", error);
+      setErrorMsg("Failed to connect to the backend server. Is it running?");
+    }
   };
 
   return (
@@ -31,6 +56,8 @@ const Login = () => {
         <div className="login-card-wrapper">
           <div className="login-card">
             <h1 className="login-title">LOGIN</h1>
+            {errorMsg && <div className="login-error-msg" style={{ color: '#ff4d4f', marginBottom: '1rem', fontSize: '14px', textAlign: 'center' }}>{errorMsg}</div>}
+            {successMsg && <div className="login-success-msg" style={{ color: '#52c41a', marginBottom: '1rem', fontSize: '14px', textAlign: 'center' }}>{successMsg}</div>}
             <form onSubmit={handleLogin} className="login-form">
               <div className="login-input-group">
                 <input 
