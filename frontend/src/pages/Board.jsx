@@ -3,23 +3,18 @@ import Section from '../components/Section';
 import PersonCard from '../components/PersonCard';
 import './Board.css';
 
-// Placeholder data for officers - can be updated with real data
 const nationalOfficers = [
-  { id: 1, name: 'Maria Santos', title: 'National President', image: null },
-  { id: 2, name: 'Elena Reyes', title: 'National Vice President', image: null },
-  { id: 3, name: 'Carmen Delgado', title: 'National Secretary', image: null },
-  { id: 4, name: 'Rosa Fernandez', title: 'National Treasurer', image: null },
-  { id: 5, name: 'Luz Mercado', title: 'PRO', image: null },
-  { id: 6, name: 'Ana Garcia', title: 'Business Manager', image: null },
+  { id: 1, name: 'RAPHAEL VICTOR V. SANTIAGO, RN, LPT, M.A.Ed.', title: 'Founding President', image: null },
+  { id: 2, name: 'MA. ANNA CECILIA L. PEREZ, RN', title: 'Vice President', image: null },
+  { id: 3, name: 'DERLYN R. MACEDA, RN', title: 'Secretary', image: null },
+  { id: 4, name: 'RALPH MARCO M. ALONZO, RN', title: 'Treasurer', image: null },
+  { id: 5, name: 'MARIA KATRINA GRACE P. MEDINA, RN', title: 'Auditor', image: null },
 ];
 
 const boardMembers = [
-  { id: 1, name: 'Patricia Cruz', title: 'Board Member - Luzon', image: null },
-  { id: 2, name: 'Teresa Lopez', title: 'Board Member - Visayas', image: null },
-  { id: 3, name: 'Gloria Ramos', title: 'Board Member - Mindanao', image: null },
-  { id: 4, name: 'Sofia Diaz', title: 'Board Member - NCR', image: null },
-  { id: 5, name: 'Isabel Torres', title: 'Board Member - Education', image: null },
-  { id: 6, name: 'Dolores Silva', title: 'Board Member - Certification', image: null },
+  { id: 1, name: 'ENRICO RAPHAEL Q. NACINO, RN,MAN', title: 'Board Member', image: null },
+  { id: 2, name: 'LANCER FRANCE M. SERRANO, RN', title: 'Board Member', image: null },
+  { id: 3, name: 'MARK JOSEPH D. SANTOS, RN, M.A.ED', title: 'Board Member', image: null },
 ];
 
 function Board() {
@@ -27,17 +22,17 @@ function Board() {
     <div className="board">
       {/* Hero Section */}
       <Hero
-        title="Board of Officers"
-        subtitle="Leadership"
+        title="The Board"
+        subtitle="National Leadership"
         overlayColor="navy"
       />
 
       {/* National Officers */}
       <Section variant="white" id="officers">
         <div className="section-header">
-          <h2 className="section-title">National Officers</h2>
+          <h2 className="section-title">NATIONAL OFFICERS</h2>
           <p className="section-subtitle">
-            Meet the dedicated leaders guiding ADANP
+            Leading the vision of dermatology and aesthetic nursing in the Philippines
           </p>
         </div>
         <div className="board-grid">
@@ -55,9 +50,9 @@ function Board() {
       {/* Board Members */}
       <Section variant="light" id="members">
         <div className="section-header">
-          <h2 className="section-title">Board Members</h2>
+          <h2 className="section-title">BOARD MEMBERS</h2>
           <p className="section-subtitle">
-            Regional and committee representatives
+            Dedicated professionals supporting the organization's growth
           </p>
         </div>
         <div className="board-grid">
@@ -91,3 +86,4 @@ function Board() {
 }
 
 export default Board;
+
