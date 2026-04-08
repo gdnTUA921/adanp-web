@@ -13,6 +13,7 @@ function About() {
         title="About Us"
         subtitle="Association of Dermatology and Aesthetic Nurses of the Philippines"
         overlayColor="navy"
+        backgroundImage="/public/aboutbg.png"
       />
 
       {/* History Section */}
