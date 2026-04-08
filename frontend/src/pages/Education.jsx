@@ -14,6 +14,7 @@ function Education() {
         title="Education & Training"
         subtitle="Continuous Learning"
         overlayColor="navy"
+        backgroundImage="/public/educationbg.png"
       />
 
       {/* MSN Program */}
@@ -121,7 +122,7 @@ function Education() {
           </p>
         </div>
         <div className="cpd-grid">
-          
+
         </div>
       </Section>
 
@@ -138,7 +139,7 @@ function Education() {
                 values of the future.
               </p>
               <ul>
-                
+
               </ul>
             </InfoBox>
           </div>
@@ -160,19 +161,19 @@ function Education() {
             Envision your future and be part of the growing community of learners.
           </p>
           <div className="text-center" style={{ marginTop: 'var(--spacing-xl)' }}>
-          <p style={{ color: 'rgba(255,255,255,0.85)', marginBottom: 'var(--spacing-md)' }}>
-            ADANP adheres to its vision of producing qualified and competent dermatology aesthetic
-            nurses locally and across the globe. We continue to develop programs, training and
-            seminar-workshop programs that will enhance the professional standards of the advanced
-            nurse practitioners in our country.
-          </p>
-        </div>
-          
+            <p style={{ color: 'rgba(255,255,255,0.85)', marginBottom: 'var(--spacing-md)' }}>
+              ADANP adheres to its vision of producing qualified and competent dermatology aesthetic
+              nurses locally and across the globe. We continue to develop programs, training and
+              seminar-workshop programs that will enhance the professional standards of the advanced
+              nurse practitioners in our country.
+            </p>
+          </div>
+
         </div>
         <div className="cert-exams-grid">
-          
+
         </div>
-        
+
       </Section>
 
       {/* Certification & Competency Examination */}

@@ -25,6 +25,7 @@ function Board() {
         title="The Board"
         subtitle="National Leadership"
         overlayColor="navy"
+        backgroundImage="/public/boardbg.png"
       />
 
       {/* National Officers */}
@@ -72,7 +73,7 @@ function Board() {
         <div className="board-cta text-center">
           <h3>Want to Connect with Our Board?</h3>
           <p>
-            For official communications with board members, please contact us 
+            For official communications with board members, please contact us
             through our secretariat or use the officer email format:
           </p>
           <code className="email-format">firstname.lastname@adanp.org</code>

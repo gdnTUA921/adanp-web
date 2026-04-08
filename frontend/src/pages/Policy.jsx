@@ -10,6 +10,7 @@ function Policy() {
         title="Policy & Advocacy"
         subtitle="Professional Standards"
         overlayColor="navy"
+        backgroundImage="/public/policybg.png"
       />
 
       {/* Professional Concerns */}

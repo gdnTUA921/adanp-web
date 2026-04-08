@@ -33,6 +33,7 @@ function Certification() {
         title="Certification & Competency"
         subtitle="Professional Development"
         overlayColor="navy"
+        backgroundImage="/public/certificatebg.png"
       />
 
       {/* Programs Overview */}
@@ -46,14 +47,14 @@ function Certification() {
 
         <div className="programs-grid">
           {/* CAN Program */}
-          <Card 
+          <Card
             id="can"
-            title="Certified Aesthetic Nurse (CAN)" 
+            title="Certified Aesthetic Nurse (CAN)"
             subtitle="Entry Level Certification"
           >
             <p>
-              The CAN certification is designed for registered nurses who wish to 
-              specialize in aesthetic nursing procedures. This program covers fundamental 
+              The CAN certification is designed for registered nurses who wish to
+              specialize in aesthetic nursing procedures. This program covers fundamental
               knowledge and skills in cosmetic dermatology.
             </p>
             <ul className="program-requirements">
@@ -68,14 +69,14 @@ function Certification() {
           </Card>
 
           {/* DNP Program */}
-          <Card 
+          <Card
             id="dnp"
-            title="Dermatology Nurse Practitioner (DNP)" 
+            title="Dermatology Nurse Practitioner (DNP)"
             subtitle="Advanced Certification"
           >
             <p>
-              The DNP certification prepares experienced nurses for advanced practice 
-              in dermatology. This comprehensive program includes both medical and 
+              The DNP certification prepares experienced nurses for advanced practice
+              in dermatology. This comprehensive program includes both medical and
               surgical dermatology training.
             </p>
             <ul className="program-requirements">
@@ -90,14 +91,14 @@ function Certification() {
           </Card>
 
           {/* Fellowship Program */}
-          <Card 
+          <Card
             id="fadanp"
-            title="Fellowship Program (FADANP)" 
+            title="Fellowship Program (FADANP)"
             subtitle="Highest Level of Expertise"
           >
             <p>
-              The FADANP fellowship is the pinnacle of dermatology and aesthetic 
-              nursing education. Fellows gain expertise in complex procedures and 
+              The FADANP fellowship is the pinnacle of dermatology and aesthetic
+              nursing education. Fellows gain expertise in complex procedures and
               contribute to research and education.
             </p>
             <ul className="program-requirements">
@@ -119,8 +120,8 @@ function Certification() {
           <h2 className="section-title">Submit Your Application</h2>
         </div>
         <div className="application-info">
-          <InfoBox 
-            icon="📋" 
+          <InfoBox
+            icon="📋"
             title="Application Process"
             variant="default"
           >
@@ -136,7 +137,7 @@ function Certification() {
           <div className="application-cta">
             <h4>Ready to Apply?</h4>
             <p>
-              Download the application forms and candidate bulletins, or contact 
+              Download the application forms and candidate bulletins, or contact
               our certification department for assistance.
             </p>
             <div className="cta-buttons">
@@ -155,7 +156,7 @@ function Certification() {
             2026 Certification Exam Dates
           </p>
         </div>
-        <Table 
+        <Table
           columns={[
             { header: 'Examination', accessor: 'exam' },
             { header: 'Date', accessor: 'date' },
@@ -174,13 +175,13 @@ function Certification() {
             Congratulations to our newly certified members
           </p>
         </div>
-        <Table 
+        <Table
           columns={columns}
           data={passersData}
           className="passers-table"
         />
         <p className="table-note">
-          * This is a partial list. For the complete list of passers, please contact 
+          * This is a partial list. For the complete list of passers, please contact
           the certification department.
         </p>
       </Section>
