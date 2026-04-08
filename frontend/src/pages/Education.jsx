@@ -21,30 +21,35 @@ function Education() {
         <div className="section-header">
           <h2 className="section-title">Master of Science in Nursing</h2>
           <p className="section-subtitle">
-            Dermatology & Aesthetic Nursing Specialization
+            Major in Dermatology and Aesthetic
           </p>
         </div>
         <div className="msn-content">
           <div className="msn-description">
             <p className="lead-text">
-              Our Master of Science in Nursing program with specialization in
-              Dermatology & Aesthetic Nursing provides advanced education for
-              nurses seeking to become leaders in this specialized field.
+              This degree program is designed to develop professional nurses as a specialized role as a
+              dermatology aesthetic nurse through advanced clinical practice, scientific endeavors and
+              community development work using evidence-based skills.
             </p>
             <p>
-              This comprehensive program combines theoretical knowledge with
-              hands-on clinical training, preparing graduates for advanced
-              practice roles in dermatology clinics, aesthetic centers,
-              academic institutions, and research facilities.
+              The curriculum aims to produce a fully functioning dermatology aesthetic nurse that is
+              oriented with the adaptation of holistic skills and professional values adamant to the
+              standards of the nursing profession. The dermatology aesthetic nurse must (1) develop a
+              sensitive awareness of the needs of the target population as well as a commitment to the
+              alleviation of accompanying problems that arises therefrom; (2) work within their
+              professional standards and scope of practice based on each nurse's education, knowledge,
+              competency, skills, attitude and extent of experience and lawful authority; and (3) be
+              governed by evidence-based, training and research standard operating policy and procedures
+              and clinical practice guidelines or its equivalent.
             </p>
           </div>
           <div className="msn-details">
             <InfoBox icon={<FaBook />} title="Program Details" variant="light">
               <ul>
-                <li><strong>Duration:</strong> 2 years (full-time)</li>
-                <li><strong>Format:</strong> Hybrid (online + clinical)</li>
-                <li><strong>Credits:</strong> 45 units</li>
-                <li><strong>Clinical Hours:</strong> 500+ hours</li>
+                <li><strong>Degree:</strong> Master of Science in Nursing</li>
+                <li><strong>Major:</strong> Dermatology and Aesthetic</li>
+                <li><strong>Focus:</strong> Advanced Clinical Practice</li>
+                <li><strong>Approach:</strong> Evidence-Based Skills</li>
               </ul>
             </InfoBox>
           </div>
@@ -56,50 +61,50 @@ function Education() {
           <div className="outcomes-grid">
             <div className="outcome-item">
               <span className="outcome-icon"><FaMicroscope /></span>
-              <h4>Advanced Clinical Knowledge</h4>
+              <h4>Clinical Assessment & Management</h4>
               <p>
-                Demonstrate expertise in diagnosing and managing complex
-                dermatological conditions and aesthetic procedures.
+                Apply specialist knowledge of anatomy and physiology to the nursing assessment
+                and management of people undergoing dermatological treatments.
               </p>
             </div>
             <div className="outcome-item">
               <span className="outcome-icon"><FaUserMd /></span>
-              <h4>Evidence-Based Practice</h4>
+              <h4>Holistic Person-Centered Care</h4>
               <p>
-                Apply current research and evidence-based guidelines to
-                optimize patient outcomes in dermatology care.
+                Analyze the principles of therapeutic treatments to apply to the delivery of
+                holistic person-centered care.
               </p>
             </div>
             <div className="outcome-item">
               <span className="outcome-icon"><FaUsers /></span>
-              <h4>Leadership Skills</h4>
+              <h4>Advanced Communication</h4>
               <p>
-                Lead interdisciplinary teams and advocate for patients
-                in dermatology and aesthetic healthcare settings.
-              </p>
-            </div>
-            <div className="outcome-item">
-              <span className="outcome-icon"><FaChartBar /></span>
-              <h4>Research Competency</h4>
-              <p>
-                Design and conduct research studies to advance the
-                science of dermatology nursing practice.
+                Develop advanced communication skills in order to establish therapeutic
+                relationships with patients, stakeholders and the multidisciplinary team.
               </p>
             </div>
             <div className="outcome-item">
               <span className="outcome-icon"><FaGraduationCap /></span>
-              <h4>Education & Mentorship</h4>
+              <h4>Leadership & Lifelong Learning</h4>
               <p>
-                Educate patients, families, and healthcare professionals
-                on dermatology and aesthetic nursing topics.
+                Critically reflect upon current practice and learning experiences to promote
+                leadership, knowledge sharing and development of a philosophy of lifelong learning.
               </p>
             </div>
             <div className="outcome-item">
               <span className="outcome-icon"><FaGlobe /></span>
-              <h4>Professional Ethics</h4>
+              <h4>Legal, Ethical & Cultural Awareness</h4>
               <p>
-                Uphold ethical standards and cultural sensitivity in
-                all aspects of dermatology nursing practice.
+                Explore the legal, ethical and cultural issues in relation to the nursing care
+                of patients undergoing dermatological procedures.
+              </p>
+            </div>
+            <div className="outcome-item">
+              <span className="outcome-icon"><FaChartBar /></span>
+              <h4>Evidence-Based Contemporary Care</h4>
+              <p>
+                Critically analyze current literature and nursing practice to provide evidence-based
+                contemporary care in the dermatology specialty.
               </p>
             </div>
           </div>
@@ -111,33 +116,12 @@ function Education() {
         <div className="section-header">
           <h2 className="section-title">Continuing Professional Development</h2>
           <p className="section-subtitle">
-            Stay current with the latest advances in dermatology and aesthetic nursing
+            Our monthly Continuing Professional Development Programs will ensure competency
+            in your dermatology and aesthetic nursing practice.
           </p>
         </div>
         <div className="cpd-grid">
-          <Card title="Workshops & Seminars" subtitle="Hands-On Learning">
-            <p>
-              Participate in intensive workshops covering laser therapy,
-              chemical peels, microneedling, injectables, and other
-              advanced aesthetic procedures.
-            </p>
-            <Button variant="outline-navy" size="small">View Schedule</Button>
-          </Card>
-          <Card title="Online Courses" subtitle="Flexible Learning">
-            <p>
-              Access self-paced online modules covering dermatology
-              fundamentals, pharmacology, patient assessment, and
-              safety protocols.
-            </p>
-            <Button variant="outline-navy" size="small">Browse Courses</Button>
-          </Card>
-          <Card title="Annual Convention" subtitle="Premier Event">
-            <p>
-              Join our annual national convention featuring renowned
-              speakers, scientific sessions, and networking opportunities.
-            </p>
-            <Button variant="outline-navy" size="small">Learn More</Button>
-          </Card>
+          
         </div>
       </Section>
 
@@ -150,88 +134,98 @@ function Education() {
           <div className="research-info">
             <InfoBox icon={<FaMicroscope />} title="Research Initiatives" variant="default">
               <p>
-                ADANP supports and promotes research in dermatology and
-                aesthetic nursing through grants, mentorship, and
-                publication opportunities.
+                Discover how ADANP nurses create, develop, and impact the professional
+                values of the future.
               </p>
               <ul>
-                <li>Annual research grants for members</li>
-                <li>Research mentorship program</li>
-                <li>Collaboration with academic institutions</li>
-                <li>Publication in ADANP Journal</li>
+                
               </ul>
             </InfoBox>
           </div>
           <div className="research-journal">
-            <h3>ADANP Journal</h3>
+            <h3>Journal</h3>
             <p>
-              The official publication of ADANP features peer-reviewed
-              articles, case studies, and research findings in dermatology
-              and aesthetic nursing.
+              We present to you a digital library of scholarly journals that encompasses a
+              spectrum of the most advanced and recent documents of the 21st century.
             </p>
-            <ul className="journal-features">
-              <li>Quarterly publication</li>
-              <li>Peer-reviewed articles</li>
-              <li>Case reports and reviews</li>
-              <li>Online and print access for members</li>
-            </ul>
-            <Button variant="primary" size="small">Access Journal</Button>
           </div>
         </div>
       </Section>
 
-      {/* Certification Exams */}
+      {/* Programs, Training & Seminars */}
       <Section variant="navy">
         <div className="section-header">
-          <h2 className="section-title">Certification Examinations</h2>
+          <h2 className="section-title">Programs, Training and Seminars</h2>
+          <p className="section-subtitle">
+            Envision your future and be part of the growing community of learners.
+          </p>
+          <div className="text-center" style={{ marginTop: 'var(--spacing-xl)' }}>
+          <p style={{ color: 'rgba(255,255,255,0.85)', marginBottom: 'var(--spacing-md)' }}>
+            ADANP adheres to its vision of producing qualified and competent dermatology aesthetic
+            nurses locally and across the globe. We continue to develop programs, training and
+            seminar-workshop programs that will enhance the professional standards of the advanced
+            nurse practitioners in our country.
+          </p>
+        </div>
+          
+        </div>
+        <div className="cert-exams-grid">
+          
+        </div>
+        
+      </Section>
+
+      {/* Certification & Competency Examination */}
+      <Section variant="light">
+        <div className="section-header">
+          <h2 className="section-title">Certification and Competency Examination</h2>
           <p className="section-subtitle">
             Validate your expertise with ADANP certifications
           </p>
         </div>
-        <div className="cert-exams-grid">
-          <div className="exam-card">
-            <h4>Certified Aesthetic Nurse</h4>
-            <p>CAN Examination</p>
-            <Button variant="outline-light" size="small">Learn More</Button>
+        <div className="certification-section">
+          <div className="research-info">
+            <InfoBox icon={<FaGraduationCap />} title="About the Examination" variant="default">
+              <p>
+                The National Certification and Competency Examination are administered by the
+                Board of Examiners of the Association of Dermatology and Aesthetic Nurses of
+                the Philippines to evaluate the competencies of entry-level dermatology and
+                aesthetic nurses in the Philippines.
+              </p>
+              <p>
+                The examinations cover topics from dermatology nursing principles to
+                dermatology nursing clinical practices.
+              </p>
+            </InfoBox>
           </div>
-          <div className="exam-card">
-            <h4>Dermatology Nurse Practitioner</h4>
-            <p>DNP Examination</p>
-            <Button variant="outline-light" size="small">Learn More</Button>
-          </div>
-          <div className="exam-card">
-            <h4>Fellow of ADANP</h4>
-            <p>FADANP Examination</p>
-            <Button variant="outline-light" size="small">Learn More</Button>
-          </div>
-        </div>
-        <div className="text-center" style={{ marginTop: 'var(--spacing-xl)' }}>
-          <Button variant="primary" size="large">View Certification Programs</Button>
         </div>
       </Section>
 
       {/* Resources */}
-      <Section variant="light">
+      <Section variant="white">
         <div className="section-header">
-          <h2 className="section-title">Educational Resources</h2>
+          <h2 className="section-title">Resources</h2>
+          <p className="section-subtitle">
+            Wide varieties of resources for the ADANP members are available for references and download.
+          </p>
         </div>
         <div className="resources-grid">
           <InfoBox icon={<FaBookOpen />} title="Digital Library" variant="default">
             <p>
-              Access our comprehensive digital library with textbooks,
-              journals, guidelines, and clinical resources.
+              Access our comprehensive digital library with textbooks, journals, guidelines,
+              and clinical resources available exclusively for members.
             </p>
           </InfoBox>
           <InfoBox icon={<FaVideo />} title="Video Library" variant="default">
             <p>
-              Watch procedural videos, lecture recordings, and
-              demonstration videos from expert practitioners.
+              Watch procedural videos, lecture recordings, and demonstration videos
+              from expert practitioners in dermatology and aesthetic nursing.
             </p>
           </InfoBox>
-          <InfoBox icon={<FaMobileAlt />} title="Mobile App" variant="default">
+          <InfoBox icon={<FaMobileAlt />} title="Downloadable Materials" variant="default">
             <p>
-              Download the ADANP mobile app for on-the-go access
-              to resources, news, and member community.
+              Download reference materials, clinical guidelines, research publications,
+              and member resources directly from the ADANP portal.
             </p>
           </InfoBox>
         </div>
