@@ -33,7 +33,7 @@ function Certification() {
         title="Certification & Competency"
         subtitle="Professional Development"
         overlayColor="navy"
-        backgroundImage="/public/certificatebg.png"
+        backgroundImage="/certificatebg.png"
       />
 
       {/* Programs Overview */}

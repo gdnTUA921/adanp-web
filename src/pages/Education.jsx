@@ -14,7 +14,7 @@ function Education() {
         title="Education & Training"
         subtitle="Continuous Learning"
         overlayColor="navy"
-        backgroundImage="/public/educationbg.png"
+        backgroundImage="/educationbg.png"
       />
 
       {/* MSN Program */}

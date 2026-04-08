@@ -36,7 +36,7 @@ function Membership() {
         title="Membership"
         subtitle="Join the ADANP Community"
         overlayColor="navy"
-        backgroundImage="/public/membershipbg.png"
+        backgroundImage="/membershipbg.png"
       />
 
       {/* Membership Categories */}

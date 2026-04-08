@@ -25,7 +25,7 @@ function Board() {
         title="The Board"
         subtitle="National Leadership"
         overlayColor="navy"
-        backgroundImage="/public/boardbg.png"
+        backgroundImage="/boardbg.png"
       />
 
       {/* National Officers */}
