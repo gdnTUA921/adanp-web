@@ -112,12 +112,10 @@
 
 .navbar-link:hover {
   color: var(--gold);
-  background-color: rgba(212, 166, 74, 0.05);
 }
 
 .navbar-link.active {
   color: var(--gold);
-  background-color: rgba(212, 166, 74, 0.1);
 }
 
 /* CTA style for the last item (Contact) */
