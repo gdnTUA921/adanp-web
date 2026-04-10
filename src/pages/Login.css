@@ -1,6 +1,6 @@
 .login-container {
-  display: flex;
-  height: 100vh;
+
+  min-height: calc(100vh - 100px);
   width: 100%;
 }
 
@@ -8,18 +8,7 @@
   box-sizing: border-box;
 }
 
-.login-left-panel {
-  flex: 1;
-  background-color: #1f355e;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
+
 
 .login-back-btn {
   position: absolute;
@@ -214,7 +203,7 @@
 @keyframes slideUpFade {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(100px);
   }
 
   to {
@@ -225,10 +214,10 @@
 
 .login-anim-shape {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
+  border-radius: 30%;
+  filter: blur(20px);
   z-index: 0;
-  animation: floatOrb 15s infinite ease-in-out alternate;
+  animation: floatOrb 5s infinite ease-in-out alternate;
 }
 
 .shape-1 {
@@ -237,7 +226,7 @@
   background-color: #f6ab36;
   top: -100px;
   left: -100px;
-  opacity: 0.25;
+  opacity: 0.40;
 }
 
 .shape-2 {
@@ -246,7 +235,7 @@
   background-color: #3b82f6;
   bottom: -150px;
   right: -50px;
-  opacity: 0.15;
+  opacity: 0.30;
   animation-duration: 20s;
   animation-direction: alternate-reverse;
 }
@@ -257,7 +246,7 @@
   background-color: #ffffff;
   top: 40%;
   left: 20%;
-  opacity: 0.08;
+  opacity: 0.50;
   animation-duration: 25s;
 }
 
@@ -271,7 +260,7 @@
   }
 
   66% {
-    transform: translate(-30px, 40px) scale(0.9);
+    transform: translate(-30px, 80px) scale(0.9);
   }
 
   100% {

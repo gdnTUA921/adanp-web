@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer';
 import './Login.css';
 
 const Login = () => {
@@ -13,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     setErrorMsg('');
     setSuccessMsg('');
-    
+
     try {
       const response = await fetch("http://localhost:8000/adanp-back/login.php", {
         method: "POST",
@@ -44,14 +45,9 @@ const Login = () => {
         <div className="login-anim-shape shape-1"></div>
         <div className="login-anim-shape shape-2"></div>
         <div className="login-anim-shape shape-3"></div>
-        
-        <Link to="/" className="login-back-btn">
-          &larr; Back to Home
-        </Link>
-        <div className="login-logo-box">
-          <img src="/adanplogo.png" alt="ADANP Logo" className="login-logo" />
-        </div>
-        <h2 className="login-tagline">ADVANCING NURSING: TRANSFORMING LIVES</h2>
+
+
+
       </div>
       <div className="login-right-panel">
         <div className="login-card-wrapper">
@@ -61,23 +57,23 @@ const Login = () => {
             {successMsg && <div className="login-success-msg" style={{ color: '#52c41a', marginBottom: '1rem', fontSize: '14px', textAlign: 'center' }}>{successMsg}</div>}
             <form onSubmit={handleLogin} className="login-form">
               <div className="login-input-group">
-                <input 
-                  type="email" 
-                  placeholder="Email" 
+                <input
+                  type="email"
+                  placeholder="Email"
                   className="login-input"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  required 
+                  required
                 />
               </div>
               <div className="login-input-group">
-                <input 
-                  type="password" 
-                  placeholder="Password" 
+                <input
+                  type="password"
+                  placeholder="Password"
                   className="login-input"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  required 
+                  required
                 />
                 <span className="login-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
@@ -91,6 +87,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
