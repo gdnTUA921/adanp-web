@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import Section from '../components/Section';
 import ContactForm from '../components/ContactForm';
 import InfoBox from '../components/InfoBox';
+import contact  from '../assets/contact.png';
 import './Contact.css';
 
 function Contact() {
@@ -17,6 +18,7 @@ function Contact() {
       <Hero
         title="Contact Us"
         subtitle="Get in Touch"
+        backgroundImage={contact}
         overlayColor="navy"
       />
 

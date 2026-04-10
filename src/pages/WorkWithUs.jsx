@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Card from '../components/Card';
 import InfoBox from '../components/InfoBox';
+import work from '../assets/work.png';
 import './WorkWithUs.css';
 
 function WorkWithUs() {
@@ -12,7 +13,7 @@ function WorkWithUs() {
       <Hero
         title="Work With Us"
         subtitle="Partnerships & Opportunities"
-        overlayColor="navy"
+        backgroundImage={work}
       />
 
       {/* Partners Section */}

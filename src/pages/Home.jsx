@@ -5,6 +5,8 @@ import Section from '../components/Section';
 import Card from '../components/Card';
 import InfoBox from '../components/InfoBox';
 import logo from '../assets/adanp-logo.jpg';
+import dermas from '../assets/dermats.png';
+import woman from '../assets/woman.png';
 import './Home.css';
 
 function Home() {
@@ -14,7 +16,7 @@ function Home() {
       <Hero
         title="Association of Dermatology & Aesthetic Nurses of the Philippines"
         subtitle="ADANP"
-        backgroundImage={logo}
+        backgroundImage={dermas}
         primaryButton={{ to: '/membership', text: 'Join Now' }}
         secondaryButton={{ to: '/certification', text: 'Get Certified' }}
       />
@@ -25,16 +27,21 @@ function Home() {
           <h2 className="section-title">Welcome to ADANP</h2>
         </div>
         <div className="home-intro">
-          <p className="lead-text">
-            The Association of Dermatology and Aesthetic Nurses of the Philippines (ADANP)
-            is the premier professional organization dedicated to advancing the practice
-            of dermatology and aesthetic nursing in the Philippines.
-          </p>
-          <p>
-            We are committed to empowering Filipino nurses through education, certification,
-            and professional development programs that uphold the highest standards of
-            patient care and safety in dermatology and aesthetic practice.
-          </p>
+          <div className="intro-text">
+            <p className="lead-text">
+              The Association of Dermatology and Aesthetic Nurses of the Philippines (ADANP)
+              is the premier professional organization dedicated to advancing the practice
+              of dermatology and aesthetic nursing in the Philippines.
+            </p>
+            <p>
+              We are committed to empowering Filipino nurses through education, certification,
+              and professional development programs that uphold the highest standards of
+              patient care and safety in dermatology and aesthetic practice.
+            </p>
+          </div>
+          <div className="intro-image">
+            <img src={woman} alt="woman" />
+          </div>
         </div>
         <div className="home-cta-grid grid-3">
           <Card title="Certification Programs" subtitle="Advance Your Career">
@@ -141,7 +148,7 @@ function Home() {
         <div className="news-grid grid-3">
           <Card title="Annual Convention 2026" subtitle="Upcoming Event">
             <p>
-              Join us for our annual national convention featuring expert speakers, 
+              Join us for our annual national convention featuring expert speakers,
               workshops, and networking opportunities.
             </p>
             <Link to="/news" className="btn btn-outline-navy btn-small">
@@ -150,7 +157,7 @@ function Home() {
           </Card>
           <Card title="Certification Exam Schedule" subtitle="Important Dates">
             <p>
-              Mark your calendars for the upcoming Certified Aesthetic Nurse and 
+              Mark your calendars for the upcoming Certified Aesthetic Nurse and
               Dermatology Nurse Practitioner examinations.
             </p>
             <Link to="/certification" className="btn btn-outline-navy btn-small">
@@ -159,7 +166,7 @@ function Home() {
           </Card>
           <Card title="Continuing Education Program" subtitle="Professional Development">
             <p>
-              Enroll in our latest CPD programs and seminars to enhance your 
+              Enroll in our latest CPD programs and seminars to enhance your
               dermatology and aesthetic nursing skills.
             </p>
             <Link to="/education" className="btn btn-outline-navy btn-small">
@@ -179,7 +186,7 @@ function Home() {
         <div className="cta-section text-center">
           <h2>Ready to Advance Your Career?</h2>
           <p>
-            Join ADANP today and become part of a growing community of dedicated 
+            Join ADANP today and become part of a growing community of dedicated
             dermatology and aesthetic nurses in the Philippines.
           </p>
           <div className="cta-buttons">
