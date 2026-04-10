@@ -1,66 +1,71 @@
-import { FaMapMarkerAlt, FaFileDownload, FaTrophy, FaStar, FaMicroscope } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaFileDownload, FaTrophy, FaStar, FaMicroscope, FaCalendarAlt, FaNewspaper, FaAward } from 'react-icons/fa';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Card from '../components/Card';
+import InfoBox from '../components/InfoBox';
 import './News.css';
 
 function News() {
-  const newsItems = [
+  const pressReleases = [
     {
       id: 1,
-      title: 'ADANP Annual Convention 2026',
-      category: 'Event',
-      date: 'March 15, 2026',
-      excerpt: 'Join us for our biggest annual event featuring world-class speakers, workshops, and networking opportunities.',
-      image: null
+      title: '',
+      date: '',
+      excerpt: ''
     },
     {
       id: 2,
-      title: 'New Certification Cycle Opens',
-      category: 'Announcement',
-      date: 'February 1, 2026',
-      excerpt: 'Applications are now being accepted for the CAN, DNP, and FADANP certification examinations.',
-      image: null
+      title: '',
+      date: '',
+      excerpt: ''
     },
     {
       id: 3,
-      title: 'CPD Program: Advanced Laser Therapy',
-      category: 'Education',
-      date: 'January 20, 2026',
-      excerpt: 'Register now for our upcoming continuing education program on advanced laser therapy techniques.',
-      image: null
-    },
-    {
-      id: 4,
-      title: 'ADANP Research Grant Recipients Announced',
-      category: 'News',
-      date: 'January 10, 2026',
-      excerpt: 'Congratulations to our 2026 research grant recipients who will be advancing dermatology nursing science.',
-      image: null
-    },
-    {
-      id: 5,
-      title: 'Membership Drive 2026',
-      category: 'Membership',
-      date: 'December 15, 2025',
-      excerpt: 'Special membership rates available for new members joining before the end of the year.',
-      image: null
-    },
-    {
-      id: 6,
-      title: 'Partnership with International Dermatology Association',
-      category: 'Partnership',
-      date: 'December 1, 2025',
-      excerpt: 'ADANP announces new partnership to provide global learning opportunities for members.',
-      image: null
+      title: '',
+      date: '',
+      excerpt: ''
     }
   ];
 
   const calendarEvents = [
-    { date: 'Mar 15-17, 2026', event: 'Annual Convention', location: 'Manila' },
-    { date: 'Jun 15, 2026', event: 'CAN Examination', location: 'Multiple Centers' },
-    { date: 'Sep 20, 2026', event: 'DNP Examination', location: 'Cebu' },
-    { date: 'Nov 10, 2026', event: 'FADANP Examination', location: 'Davao' },
+    { date: '', event: '', location: '' },
+    { date: '', event: '', location: '' },
+    { date: '', event: '', location: '' },
+    { date: '', event: '', location: '' },
+    { date: '', event: '', location: '' },
+    { date: '', event: '', location: '' },
+  ];
+
+  const conventionHighlights = [
+    'Keynote speeches from international dermatology experts',
+    'Hands-on workshops on advanced aesthetic procedures',
+    'Research poster presentations and competitions',
+    'Networking opportunities with industry leaders',
+    'Annual General Assembly meeting',
+    'Awards and recognition ceremony'
+  ];
+
+  const awards = [
+    {
+      title: 'Nurse of the Year Award',
+      description: 'Recognizing outstanding contributions to dermatology and aesthetic nursing practice.',
+      icon: <FaTrophy />
+    },
+    {
+      title: 'Excellence in Education Award',
+      description: 'Honoring members who demonstrate exceptional commitment to education and mentorship.',
+      icon: <FaStar />
+    },
+    {
+      title: 'Research Achievement Award',
+      description: 'Celebrating significant contributions to dermatology nursing research.',
+      icon: <FaMicroscope />
+    },
+    {
+      title: 'Lifetime Achievement Award',
+      description: 'Recognizing members who have dedicated their careers to advancing the profession.',
+      icon: <FaAward />
+    }
   ];
 
   return (
@@ -70,41 +75,43 @@ function News() {
         title="News & Events"
         subtitle="Stay Updated"
         overlayColor="navy"
+        backgroundImage="/publicnigga/newsbg.png"
       />
 
-      {/* Latest News */}
+      {/* Media and Press Releases */}
       <Section variant="white">
         <div className="section-header">
-          <h2 className="section-title">Latest News</h2>
+          <h2 className="section-title">Media and Press Releases</h2>
           <p className="section-subtitle">
-            Keep up with the latest announcements, events, and updates from ADANP
+            Official statements, announcements, and press releases from ADANP
           </p>
         </div>
-        <div className="news-grid">
-          {newsItems.map((item) => (
-            <Card
-              key={item.id}
-              title={item.title}
-              subtitle={`${item.category} • ${item.date}`}
-            >
-              <p>{item.excerpt}</p>
-              <a href="#" className="read-more-link">Read More →</a>
-            </Card>
+        <div className="press-releases-grid">
+          {pressReleases.map((release) => (
+            <div key={release.id} className="press-release-item">
+              <div className="press-release-header">
+                <span className="press-release-icon"><FaNewspaper /></span>
+                <span className="press-release-date">{release.date}</span>
+              </div>
+              <h4 className="press-release-title">{release.title}</h4>
+              <p className="press-release-excerpt">{release.excerpt}</p>
+              <a href="#" className="download-link"><FaFileDownload /> Download PDF</a>
+            </div>
           ))}
         </div>
       </Section>
 
-      {/* Calendar Section */}
+      {/* Calendar of Activities */}
       <Section variant="light">
         <div className="section-header">
-          <h2 className="section-title">Event Calendar</h2>
+          <h2 className="section-title">Calendar of Activities</h2>
           <p className="section-subtitle">
-            Upcoming events and important dates
+            Upcoming events, seminars, examinations, and important dates
           </p>
         </div>
         <div className="calendar-content">
           <div className="calendar-list">
-            <h3>2026 Schedule</h3>
+            <h3><FaCalendarAlt /> 2026 Schedule</h3>
             <ul className="event-list">
               {calendarEvents.map((event, index) => (
                 <li key={index} className="event-item">
@@ -128,72 +135,63 @@ function News() {
         </div>
       </Section>
 
-      {/* Media Releases */}
-      <Section variant="white">
+      {/* National Convention */}
+      <Section variant="navy">
         <div className="section-header">
-          <h2 className="section-title">Media Releases</h2>
+          <h2 className="section-title">National Convention</h2>
           <p className="section-subtitle">
-            Official statements and press releases from ADANP
+            Join us for our biggest annual event
           </p>
         </div>
-        <div className="media-releases">
-          <div className="release-item">
-            <span className="release-date">January 2026</span>
-            <h4>ADANP Statement on Aesthetic Procedure Safety Standards</h4>
-            <p>
-              The Association reaffirms its commitment to patient safety and
-              professional standards in aesthetic nursing practice.
+        <div className="convention-content">
+          <div className="convention-info">
+            <div className="convention-date">
+              <FaCalendarAlt />
+              <div>
+                <h4></h4>
+                <p>Manila, Philippines</p>
+              </div>
+            </div>
+            <p className="convention-description">
+              The ADANP National Convention is our premier annual event bringing together
+              dermatology and aesthetic nursing professionals from across the Philippines
+              for three days of learning, networking, and professional development.
             </p>
-            <a href="#" className="download-link"><FaFileDownload /> Download PDF</a>
           </div>
-          <div className="release-item">
-            <span className="release-date">December 2025</span>
-            <h4>ADANP Welcomes New PRC Guidelines for Dermatology Nursing</h4>
-            <p>
-              The association expresses support for new regulatory frameworks
-              that enhance professional standards.
-            </p>
-            <a href="#" className="download-link"><FaFileDownload /> Download PDF</a>
+          <div className="convention-highlights">
+            <h3>Convention Highlights</h3>
+            <ul>
+              {conventionHighlights.map((highlight, index) => (
+                <li key={index}> {highlight}</li>
+              ))}
+            </ul>
           </div>
+        </div>
+        <div className="text-center" style={{ marginTop: 'var(--spacing-xl)' }}>
+          <a href="#" className="btn btn-primary">Register Now</a>
+          <a href="#" className="btn btn-outline-light" style={{ marginLeft: 'var(--spacing-md)' }}>Learn More</a>
         </div>
       </Section>
 
-      {/* Awards Section */}
-      <Section variant="navy">
+      {/* Awards and Recognition */}
+      <Section variant="white">
         <div className="section-header">
-          <h2 className="section-title">Awards & Recognition</h2>
+          <h2 className="section-title">Awards and Recognition</h2>
           <p className="section-subtitle">
             Celebrating excellence in dermatology and aesthetic nursing
           </p>
         </div>
         <div className="awards-grid">
-          <div className="award-item">
-            <span className="award-icon"><FaTrophy /></span>
-            <h4>Nurse of the Year Award</h4>
-            <p>
-              Recognizing outstanding contributions to dermatology and
-              aesthetic nursing practice.
-            </p>
-          </div>
-          <div className="award-item">
-            <span className="award-icon"><FaStar /></span>
-            <h4>Excellence in Education Award</h4>
-            <p>
-              Honoring members who demonstrate exceptional commitment
-              to education and mentorship.
-            </p>
-          </div>
-          <div className="award-item">
-            <span className="award-icon"><FaMicroscope /></span>
-            <h4>Research Achievement Award</h4>
-            <p>
-              Celebrating significant contributions to dermatology
-              nursing research.
-            </p>
-          </div>
+          {awards.map((award, index) => (
+            <div key={index} className="award-item">
+              <span className="award-icon">{award.icon}</span>
+              <h4>{award.title}</h4>
+              <p>{award.description}</p>
+            </div>
+          ))}
         </div>
         <div className="text-center" style={{ marginTop: 'var(--spacing-xl)' }}>
-          <a href="#" className="btn btn-outline-light">View Past Recipients</a>
+          <a href="#" className="btn btn-outline-navy">View Past Recipients</a>
         </div>
       </Section>
     </div>

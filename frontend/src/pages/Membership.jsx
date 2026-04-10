@@ -1,47 +1,32 @@
-import { FaGraduationCap, FaScroll, FaHandshake, FaBook, FaTrophy, FaBriefcase } from 'react-icons/fa';
+import { FaCheckCircle } from 'react-icons/fa';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
-import Card from '../components/Card';
-import InfoBox from '../components/InfoBox';
-import Table from '../components/Table';
 import Button from '../components/Button';
 import './Membership.css';
 
 function Membership() {
-  const membershipCategories = [
-    {
-      title: 'Basic Membership',
-      description: 'For nursing students and recent graduates interested in dermatology and aesthetic nursing.',
-      features: ['Access to newsletters', 'Student resources', 'Mentorship program', 'Event discounts']
-    },
-    {
-      title: 'Regular Membership',
-      description: 'For licensed registered nurses practicing or interested in dermatology and aesthetic nursing.',
-      features: ['Full voting rights', 'CPD opportunities', 'Certification eligibility', 'Network access', 'Journal subscription']
-    },
-    {
-      title: 'Life Membership',
-      description: 'Permanent membership with all benefits of regular membership plus lifetime recognition.',
-      features: ['All regular benefits', 'Lifetime status', 'Hall of Fame eligibility', 'Legacy recognition']
-    },
-    {
-      title: 'Associate Membership',
-      description: 'For healthcare professionals and industry partners supporting dermatology nursing.',
-      features: ['Networking opportunities', 'Educational resources', 'Event participation', 'Industry updates']
-    },
-    {
-      title: 'Institutional Membership',
-      description: 'For clinics, hospitals, and educational institutions supporting dermatology nursing education.',
-      features: ['Multiple member slots', 'Training programs', 'Recruitment support', 'Partnership benefits']
-    }
+  const membershipFees = [
+    { type: 'Basic', fee: 'Php 600' },
+    { type: 'Regular', fee: 'Php 1500' },
+    { type: 'Life', fee: 'Php 5000' },
+    { type: 'Associate', fee: 'Php 400' },
   ];
 
-  const membershipFees = [
-    { category: 'Basic', applicationFee: '₱500', annualFee: '₱1,000', lifetime: 'N/A' },
-    { category: 'Regular', applicationFee: '₱1,000', annualFee: '₱2,500', lifetime: '₱25,000' },
-    { category: 'Life', applicationFee: '₱1,000', annualFee: 'N/A', lifetime: '₱25,000' },
-    { category: 'Associate', applicationFee: '₱1,500', annualFee: '₱3,000', lifetime: '₱30,000' },
-    { category: 'Institutional', applicationFee: '₱5,000', annualFee: '₱15,000', lifetime: '₱150,000' },
+  const benefits = [
+    "Display a certificate of membership/accreditation from ADANP",
+    "Access to ADANP news journal",
+    "Access to ADANP CPD programs, seminars and workshops",
+    "Access to Philippine Professional Nursing Practice Standards for Dermatology and Aesthetic",
+    "Educational Programs-Local and International",
+    "Health Insurance Benefits",
+    "Certification and Competency Examinations",
+    "Awards, Scholarship and Grants",
+    "Communication and Networking",
+    "National Conventions",
+    "Hold voting seats in the Membership Assembly",
+    "Submit reference propositions, policies and bylaws amendments for consideration by ADANP",
+    "Submit the names of nominees for ADANP elective and appointive positions in accordance with provisions of these bylaws and applicable policies of the republic",
+    "A just trial among the regulating board before any disciplinary action is taken"
   ];
 
   return (
@@ -49,127 +34,132 @@ function Membership() {
       {/* Hero Section */}
       <Hero
         title="Membership"
-        subtitle="Join Our Community"
+        subtitle="Join the ADANP Community"
         overlayColor="navy"
+        backgroundImage="/public/membershipbg.png"
       />
 
-      {/* Introduction */}
+      {/* Membership Categories */}
       <Section variant="white">
         <div className="section-header">
-          <h2 className="section-title">Why Join ADANP?</h2>
+          <h2 className="section-title">Membership Categories</h2>
         </div>
-        <div className="membership-intro">
-          <p className="lead-text">
-            Becoming a member of ADANP connects you with a vibrant community of
-            dermatology and aesthetic nursing professionals dedicated to excellence
-            in patient care and professional development.
+        <div className="membership-text-content">
+          <p>
+            ADANP shall be composed of organizations and individuals who have member or
+            affiliate/associate status. Member status is granted to the organizations meeting the criteria of the
+            consensus assembly of aesthetic practice. Affiliate status is available for organizations meeting
+            the criteria for organizational affiliates. Both member and affiliate status are available for
+            individuals.
           </p>
-        </div>
-
-        <div className="benefits-grid">
-          <InfoBox icon={<FaGraduationCap />} title="Professional Development">
-            Access exclusive continuing professional development (CPD) programs,
-            workshops, and seminars to enhance your skills.
-          </InfoBox>
-          <InfoBox icon={<FaScroll />} title="Certification Pathways">
-            Eligibility for CAN, DNP, and FADANP certification programs that
-            advance your career.
-          </InfoBox>
-          <InfoBox icon={<FaHandshake />} title="Networking">
-            Connect with fellow professionals, mentors, and industry leaders
-            through events and online communities.
-          </InfoBox>
-          <InfoBox icon={<FaBook />} title="Resources">
-            Receive the ADANP journal, newsletters, and access to a comprehensive
-            library of dermatology resources.
-          </InfoBox>
-          <InfoBox icon={<FaTrophy />} title="Recognition">
-            Opportunities for awards, leadership roles, and recognition within
-            the dermatology nursing community.
-          </InfoBox>
-          <InfoBox icon={<FaBriefcase />} title="Career Support">
-            Job postings, recruitment assistance, and career development resources
-            for members at all stages.
-          </InfoBox>
         </div>
       </Section>
 
-      {/* Membership Categories */}
+      {/* Types of Membership */}
       <Section variant="light">
         <div className="section-header">
-          <h2 className="section-title">Membership Categories</h2>
-          <p className="section-subtitle">
-            Choose the membership that fits your career stage and goals
-          </p>
+          <h2 className="section-title">Types of Membership</h2>
         </div>
-        <div className="categories-grid">
-          {membershipCategories.map((category, index) => (
-            <Card key={index} title={category.title} variant="default">
-              <p>{category.description}</p>
-              <ul className="category-features">
-                {category.features.map((feature, i) => (
-                  <li key={i}>✓ {feature}</li>
-                ))}
-              </ul>
-            </Card>
-          ))}
+        <div className="membership-types-container">
+          <div className="membership-type-block">
+            <h3>1) Individual Membership</h3>
+            <ul className="membership-info-list">
+              <li>
+                <strong>1.1. Basic Membership</strong> is open to any licensed Registered Nurse currently practicing in
+                the field of dermatology and aesthetic or has an interest in dermatology and
+                aesthetic nursing practice;
+              </li>
+              <li>
+                <strong>1.2. Regular Membership</strong> is conferred upon a registered nurse who has undergone the
+                required post-graduate training program or its equivalent CPD and has paid the
+                required fee for the current year;
+              </li>
+              <li>
+                <strong>1.3. Life Membership</strong> is conferred upon a registered nurse who has undergone the
+                required post-graduate training program or its equivalent CPD and has been a
+                regular member for five (5) consecutive years and who shall have paid the
+                required fees;
+              </li>
+              <li>
+                <strong>1.4. Emeritus Membership</strong> is conferred upon registered nurse, who has rendered
+                distinguished service to the Association in the attainment of its goals subject to the
+                approval of the Board of Governors;
+              </li>
+              <li>
+                <strong>1.5. Associate Membership</strong> is conferred upon associate health care professionals/allied
+                health care individuals, and non-nursing/medicine practitioners who has taken
+                equivalency training and upon compliance of requirements for membership.
+              </li>
+            </ul>
+          </div>
+          <div className="membership-type-block">
+            <h3>2) Institutional Membership</h3>
+            <p className="institutional-text">
+              Is conferred upon compliance of requirements/training of the
+              members and institutional board.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      {/* Membership Benefits */}
+      <Section variant="white">
+        <div className="section-header">
+          <h2 className="section-title">Membership Benefits</h2>
+          <p className="membership-subtitle">Each individual member shall be entitled to -</p>
+        </div>
+        <div className="benefits-list-wrapper">
+          <ul className="benefits-custom-list">
+            {benefits.map((benefit, index) => (
+              <li key={index}>
+                <FaCheckCircle className="benefit-icon" />
+                <span>{benefit}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </Section>
 
       {/* Membership Fees */}
-      <Section variant="white">
+      <Section variant="light">
         <div className="section-header">
           <h2 className="section-title">Membership Fees</h2>
-          <p className="section-subtitle">
-            Transparent pricing for all membership types
-          </p>
         </div>
-        <Table 
-          columns={[
-            { header: 'Category', accessor: 'category' },
-            { header: 'Application Fee', accessor: 'applicationFee' },
-            { header: 'Annual Fee', accessor: 'annualFee' },
-            { header: 'Lifetime Option', accessor: 'lifetime' },
-          ]}
-          data={membershipFees}
-          className="fees-table"
-        />
-        <p className="fee-note">
-          * Fees are subject to change. Please contact the membership department 
-          for the most current information.
-        </p>
+        <div className="fees-table-wrapper">
+          <table className="custom-fees-table">
+            <thead>
+              <tr>
+                <th>TYPE OF MEMBERSHIP</th>
+                <th>ANNUAL FEE</th>
+              </tr>
+            </thead>
+            <tbody>
+              {membershipFees.map((fee, index) => (
+                <tr key={index}>
+                  <td>{fee.type}</td>
+                  <td>{fee.fee}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </Section>
 
-      {/* How to Apply */}
+      {/* Become a member */}
       <Section variant="navy">
         <div className="section-header">
-          <h2 className="section-title">How to Apply</h2>
+          <h2 className="section-title" style={{ color: 'var(--gold)' }}>Become a member</h2>
         </div>
-        <div className="apply-steps">
-          <div className="step">
-            <span className="step-number">1</span>
-            <h4>Choose Your Category</h4>
-            <p>Select the membership category that best fits your qualifications and goals.</p>
+        <div className="join-wrapper">
+          <p className="join-message">
+            When you join ADANP you become an integral part of the growing advanced nurse
+            practitioners in dermatology and aesthetic providing safe, effective and competent patient
+            care.
+          </p>
+          <div className="join-cta-group">
+            <Button variant="primary" size="large">Join the ADANP online</Button>
+            <Button variant="outline-light" size="large">Print an application form here</Button>
           </div>
-          <div className="step">
-            <span className="step-number">2</span>
-            <h4>Complete Application</h4>
-            <p>Fill out the membership application form and gather required documents.</p>
-          </div>
-          <div className="step">
-            <span className="step-number">3</span>
-            <h4>Submit & Pay</h4>
-            <p>Submit your application with the required fees to the membership department.</p>
-          </div>
-          <div className="step">
-            <span className="step-number">4</span>
-            <h4>Receive Welcome</h4>
-            <p>Upon approval, receive your membership certificate and welcome package.</p>
-          </div>
-        </div>
-        <div className="apply-cta">
-          <Button variant="primary" size="large">Apply Now</Button>
-          <Button variant="outline-light" size="large">Contact Membership</Button>
         </div>
       </Section>
     </div>
@@ -177,3 +167,4 @@ function Membership() {
 }
 
 export default Membership;
+

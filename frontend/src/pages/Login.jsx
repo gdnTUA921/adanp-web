@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
@@ -7,6 +7,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -27,7 +28,7 @@ const Login = () => {
       if (response.ok && data.status === "success") {
         setSuccessMsg(data.message);
         console.log('Login successful:', data.user);
-        // Add redirect after successful login here if needed later
+        navigate('/gallery-admin');
       } else {
         setErrorMsg(data.message || "An error occurred during login.");
       }

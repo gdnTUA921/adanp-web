@@ -132,6 +132,105 @@
   margin: 0 auto;
 }
 
+.text-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--medium-gray);
+  margin-bottom: 1.5rem;
+}
+
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-2xl);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.board-column h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--navy-blue);
+  margin-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 0.5rem;
+}
+
+.board-list {
+  list-style: none;
+  padding: 0;
+}
+
+.board-list li {
+  margin-bottom: var(--spacing-sm);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--medium-gray);
+}
+
+.board-list strong {
+  color: var(--navy-blue);
+  font-weight: 600;
+}
+
+.other-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.info-block {
+  background-color: var(--white);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.info-block h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--navy-blue);
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.inline-icon {
+  color: var(--gold);
+}
+
+.info-block p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--medium-gray);
+  margin-bottom: var(--spacing-sm);
+}
+
+.committee-list {
+  list-style: disc inside;
+  color: var(--medium-gray);
+  line-height: 1.6;
+}
+
+.pdf-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--navy-blue);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.pdf-link:hover {
+  background-color: var(--gold);
+  color: var(--navy-blue);
+}
+
 /* Responsive */
 @media (max-width: 992px) {
   .mv-grid,
@@ -159,7 +258,9 @@
 
   .mv-grid,
   .values-list,
-  .definitions-grid {
+  .definitions-grid,
+  .board-grid,
+  .other-info-grid {
     grid-template-columns: 1fr;
   }
 }

@@ -163,6 +163,20 @@
   margin: 0 auto;
 }
 
+/* Certification Section Center */
+.certification-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.certification-section .research-info {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
   .msn-content,

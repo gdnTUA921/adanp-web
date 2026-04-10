@@ -30,6 +30,7 @@ function Gallery() {
         title="Gallery"
         subtitle="Our Moments"
         overlayColor="navy"
+        backgroundImage="/public/gallery.png"
       />
 
       {/* Photo Gallery */}

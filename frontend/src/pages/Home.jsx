@@ -79,8 +79,8 @@ function Home() {
             variant="default"
           >
             <p>
-              To lead Filipino nurses in providing advanced quality care through
-              competency-based dermatology and aesthetic nursing education and certification.
+              To lead the Filipino nurses in providing an advanced quality of care, through
+              competency-based practice, in dermatology and aesthetic nursing.
             </p>
           </InfoBox>
           <InfoBox
@@ -89,8 +89,8 @@ function Home() {
             variant="default"
           >
             <p>
-              To empower Filipino nurses to uphold professional standards in patient
-              care and safety within dermatology and aesthetic practice.
+              To empower and uplift Filipino nurse’s professional practice standards independently in
+              providing patient care and safety in dermatology and aesthetic nursing.
             </p>
           </InfoBox>
         </div>
