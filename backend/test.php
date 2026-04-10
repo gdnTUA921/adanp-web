@@ -2,9 +2,26 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: text/html; charset=UTF-8");
 
-include_once './config/Database.php';
-
 echo "<h1>Database Connection Test</h1>";
+
+// Check PDO drivers
+echo "<h2>PDO Drivers Available:</h2>";
+$drivers = PDO::getAvailableDrivers();
+if (empty($drivers)) {
+    echo "<p style='color: red;'>No PDO drivers found! Enable pdo_mysql in php.ini</p>";
+} else {
+    echo "<ul>";
+    foreach ($drivers as $driver) {
+        $color = ($driver === 'mysql') ? 'green' : 'black';
+        echo "<li style='color: $color;'>" . $driver . "</li>";
+    }
+    echo "</ul>";
+    if (!in_array('mysql', $drivers)) {
+        echo "<p style='color: red;'>MySQL driver missing! Uncomment <code>extension=pdo_mysql</code> in php.ini and restart Apache.</p>";
+    }
+}
+
+include_once './config/Database.php';
 
 $database = new Database();
 

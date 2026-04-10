@@ -1,27 +1,41 @@
+import { useState, useEffect } from 'react';
 import { FaCamera, FaPlay } from 'react-icons/fa';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import './Gallery.css';
 
-function Gallery() {
-  // Placeholder images - using colored divs for demo
-  const galleryImages = [
-    { id: 1, title: 'Annual Convention 2025', category: 'Events' },
-    { id: 2, title: 'Certification Ceremony', category: 'Events' },
-    { id: 3, title: 'Board Meeting', category: 'Leadership' },
-    { id: 4, title: 'Training Workshop', category: 'Education' },
-    { id: 5, title: 'Member Gathering', category: 'Events' },
-    { id: 6, title: 'Award Presentation', category: 'Awards' },
-    { id: 7, title: 'Laser Training Session', category: 'Education' },
-    { id: 8, title: 'Regional Conference', category: 'Events' },
-    { id: 9, title: 'New Member Orientation', category: 'Membership' },
-  ];
+const API_URL = 'http://localhost:8000/adanp-back';
 
-  const videos = [
-    { id: 1, title: 'ADANP Introduction', duration: '3:45' },
-    { id: 2, title: 'Convention Highlights 2025', duration: '5:20' },
-    { id: 3, title: 'Member Testimonials', duration: '4:15' },
-  ];
+function Gallery() {
+  const [images, setImages] = useState([]);
+  const [videos, setVideos] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchGallery();
+  }, []);
+
+  const fetchGallery = async () => {
+    setLoading(true);
+    try {
+      // Fetch images
+      const imageRes = await fetch(`${API_URL}/gallery.php?type=image`);
+      const imageData = await imageRes.json();
+      if (imageData.status === 'success') {
+        setImages(imageData.data);
+      }
+
+      // Fetch videos
+      const videoRes = await fetch(`${API_URL}/gallery.php?type=video`);
+      const videoData = await videoRes.json();
+      if (videoData.status === 'success') {
+        setVideos(videoData.data);
+      }
+    } catch (error) {
+      console.error('Error fetching gallery:', error);
+    }
+    setLoading(false);
+  };
 
   return (
     <div className="gallery">
@@ -41,26 +55,30 @@ function Gallery() {
             Capturing moments from our events, trainings, and gatherings
           </p>
         </div>
-        <div className="gallery-filters">
-          <button className="filter-btn active">All</button>
-          <button className="filter-btn">Events</button>
-          <button className="filter-btn">Education</button>
-          <button className="filter-btn">Awards</button>
-          <button className="filter-btn">Leadership</button>
-        </div>
-        <div className="photo-grid">
-          {galleryImages.map((image) => (
-            <div key={image.id} className="photo-item">
-              <div className="photo-placeholder">
-                <span className="photo-icon"><FaCamera /></span>
+        
+        {loading ? (
+          <p className="gallery-loading">Loading gallery...</p>
+        ) : images.length === 0 ? (
+          <p className="gallery-empty">No photos uploaded yet.</p>
+        ) : (
+          <div className="photo-grid">
+            {images.slice(0, 6).map((image) => (
+              <div key={image.id} className="photo-item">
+                <div className="photo-image-wrapper">
+                  <img 
+                    src={`${API_URL}/${image.file_path}`} 
+                    alt={image.file_name}
+                    className="photo-image"
+                  />
+                </div>
+                <div className="photo-info">
+                  <span className="photo-category">Photo</span>
+                  <h4>{image.file_name}</h4>
+                </div>
               </div>
-              <div className="photo-info">
-                <span className="photo-category">{image.category}</span>
-                <h4>{image.title}</h4>
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </Section>
 
       {/* Video Section */}
@@ -71,20 +89,27 @@ function Gallery() {
             Watch highlights from our events and educational content
           </p>
         </div>
-        <div className="video-grid">
-          {videos.map((video) => (
-            <div key={video.id} className="video-item">
-              <div className="video-placeholder">
-                <div className="play-button"><FaPlay /></div>
-                <span className="video-duration">{video.duration}</span>
+        
+        {loading ? (
+          <p className="gallery-loading">Loading videos...</p>
+        ) : videos.length === 0 ? (
+          <p className="gallery-empty">No videos uploaded yet.</p>
+        ) : (
+          <div className="video-grid">
+            {videos.map((video) => (
+              <div key={video.id} className="video-item">
+                <div className="video-wrapper">
+                  <video 
+                    src={`${API_URL}/${video.file_path}`}
+                    controls
+                    className="video-player"
+                  />
+                </div>
+                <h4>{video.file_name}</h4>
               </div>
-              <h4>{video.title}</h4>
-            </div>
-          ))}
-        </div>
-        <div className="text-center" style={{ marginTop: 'var(--spacing-xl)' }}>
-          <a href="#" className="btn btn-outline-navy">View More Videos</a>
-        </div>
+            ))}
+          </div>
+        )}
       </Section>
 
       {/* Share Your Photos */}

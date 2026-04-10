@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './GalleryAdmin.css';
 import ConfirmationModal from '../components/ConfirmationModal';
 import VideoGalleryModal from '../components/VideoGalleryModal';
 import PhotoGalleryModal from '../components/PhotoGalleryModal';
+
+const API_URL = 'http://localhost:8000/adanp-back';
 
 const GalleryAdmin = () => {
   const navigate = useNavigate();
@@ -13,6 +15,33 @@ const GalleryAdmin = () => {
   const [currentGallery, setCurrentGallery] = useState('');
   const [showLogout, setShowLogout] = useState(false);
   const [isClinic, setIsClinic] = useState(true); // Set to true for clinic mode
+  const [photoCount, setPhotoCount] = useState(0);
+  const [videoCount, setVideoCount] = useState(0);
+
+  useEffect(() => {
+    fetchCounts();
+  }, []);
+
+  const fetchCounts = async () => {
+    try {
+      const [photoRes, videoRes] = await Promise.all([
+        fetch(`${API_URL}/gallery.php?type=image`),
+        fetch(`${API_URL}/gallery.php?type=video`)
+      ]);
+      
+      const photoData = await photoRes.json();
+      const videoData = await videoRes.json();
+      
+      if (photoData.status === 'success') {
+        setPhotoCount(photoData.count);
+      }
+      if (videoData.status === 'success') {
+        setVideoCount(videoData.count);
+      }
+    } catch (error) {
+      console.error('Error fetching counts:', error);
+    }
+  };
 
   const handleSettingsClick = () => {
     if (isClinic) {
@@ -130,8 +159,7 @@ const GalleryAdmin = () => {
                 </div>
                 <button className="gallery-label-btn">Photo Gallery</button>
                 <div className="card-info">
-                  <p>Total upload: 22</p>
-                  <p>Folder: 3</p>
+                  <p>Total uploads: {photoCount}</p>
                 </div>
                 <button className="edit-btn" onClick={() => handleEditClick('Photo Gallery')}>Edit</button>
               </div>
@@ -147,8 +175,7 @@ const GalleryAdmin = () => {
                 </div>
                 <button className="gallery-label-btn">Video Gallery</button>
                 <div className="card-info">
-                  <p>Total upload: 22</p>
-                  <p>Folder uploaded: 3</p>
+                  <p>Total uploads: {videoCount}</p>
                 </div>
                 <button className="edit-btn" onClick={() => handleEditClick('Video Gallery')}>Edit</button>
               </div>
