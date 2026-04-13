@@ -97,6 +97,34 @@
   letter-spacing: -0.01em;
 }
 
+.navbar-link.tooltip {
+  position: relative;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  background-color: #000;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 12px;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+  z-index: 1002;
+}
+
+.navbar-link.tooltip:hover .tooltip-text,
+.navbar-link.tooltip:focus-visible .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
 .navbar-link::after {
   content: '';
   position: absolute;
@@ -258,6 +286,10 @@
   }
 
   .navbar-link::after {
+    display: none;
+  }
+
+  .tooltip-text {
     display: none;
   }
 

@@ -11,7 +11,7 @@ const navLinks = [
   { path: '/membership', label: 'Membership' },
   { path: '/education', label: 'Education' },
   { path: '/policy', label: 'Policy & Advocacy' },
-  { path: '/news', label: 'News & Events' },
+  { path: '/news', label: 'Conventions' },
   { path: '/gallery', label: 'Gallery' },
   { path: '/work-with-us', label: 'Work With Us' },
   { path: '/contact', label: 'Contact' },
@@ -21,6 +21,7 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const currentYear = new Date().getFullYear();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,10 +63,13 @@ function Navbar() {
             <li key={link.path} className="navbar-item">
               <Link
                 to={link.path}
-                className={`navbar-link ${location.pathname === link.path ? 'active' : ''}`}
+                className={`navbar-link ${location.pathname === link.path ? 'active' : ''} ${link.path === '/news' ? 'tooltip' : ''}`}
                 onClick={closeMobileMenu}
               >
                 {link.label}
+                {link.path === '/news' && (
+                  <span className="tooltip-text">{currentYear} Conventions</span>
+                )}
               </Link>
             </li>
           ))}
