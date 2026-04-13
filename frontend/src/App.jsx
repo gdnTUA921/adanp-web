@@ -14,16 +14,20 @@ import GalleryAdmin from './pages/GalleryAdmin';
 import WorkWithUs from './pages/WorkWithUs';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
+import NonMemberDashboard from './pages/NonMemberDashboard';
+import AdminDashboard from './pages/AdminDashboard';
+import MemberDashboard from './pages/MemberDashboard';
 
 function AppContent() {
   const location = useLocation();
   const isLoginPage = location.pathname === '/login';
   const isGalleryAdminPage = location.pathname === '/gallery-admin' || location.pathname === '/Gallery-admin';
+  const isDashboardPage = location.pathname.includes('dashboard');
 
   return (
     <div className="app">
-      {!isLoginPage && !isGalleryAdminPage && <a href="#main-content" className="skip-link">Skip to main content</a>}
-      {!isGalleryAdminPage && <Navbar />}
+      {!isLoginPage && !isGalleryAdminPage && !isDashboardPage && <a href="#main-content" className="skip-link">Skip to main content</a>}
+      {!isGalleryAdminPage && !isDashboardPage && <Navbar />}
       <main id="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -40,9 +44,12 @@ function AppContent() {
           <Route path="/work-with-us" element={<WorkWithUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/non-member-dashboard" element={<NonMemberDashboard />} />
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
+          <Route path="/member-dashboard" element={<MemberDashboard />} />
         </Routes>
       </main>
-      {!isLoginPage && !isGalleryAdminPage && <Footer />}
+      {!isLoginPage && !isGalleryAdminPage && !isDashboardPage && <Footer />}
     </div>
   );
 }
