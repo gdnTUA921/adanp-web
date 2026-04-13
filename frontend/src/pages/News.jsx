@@ -75,7 +75,7 @@ function News() {
         title="News & Events"
         subtitle="Stay Updated"
         overlayColor="navy"
-        backgroundImage="/publicnigga/newsbg.png"
+        backgroundImage="/newsbg.png"
       />
 
       {/* Media and Press Releases */}

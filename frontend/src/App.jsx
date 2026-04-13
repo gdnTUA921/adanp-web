@@ -23,7 +23,7 @@ function AppContent() {
   return (
     <div className="app">
       {!isLoginPage && !isGalleryAdminPage && <a href="#main-content" className="skip-link">Skip to main content</a>}
-      {!isLoginPage && !isGalleryAdminPage && <Navbar />}
+      {!isGalleryAdminPage && <Navbar />}
       <main id="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -49,7 +49,7 @@ function AppContent() {
 
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <AppContent />
     </Router>
   );

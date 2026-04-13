@@ -1,6 +1,7 @@
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import PersonCard from '../components/PersonCard';
+import board from '../assets/board.png';
 import './Board.css';
 
 const nationalOfficers = [
@@ -25,7 +26,7 @@ function Board() {
         title="The Board"
         subtitle="National Leadership"
         overlayColor="navy"
-        backgroundImage="/public/boardbg.png"
+        backgroundImage={board}
       />
 
       {/* National Officers */}

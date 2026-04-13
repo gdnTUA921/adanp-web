@@ -1,19 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer';
+
+import logo from '../assets/adanp-logo.jpg';
 import './Login.css';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
-  const navigate = useNavigate();
+  const containerRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    if (!containerRef.current) return;
+    const { left, top } = containerRef.current.getBoundingClientRect();
+    const x = e.clientX - left;
+    const y = e.clientY - top;
+    containerRef.current.style.setProperty('--mouse-x', `${x}px`);
+    containerRef.current.style.setProperty('--mouse-y', `${y}px`);
+  };
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setErrorMsg('');
     setSuccessMsg('');
-    
+
     try {
       const response = await fetch("http://localhost:8000/adanp-back/login.php", {
         method: "POST",
@@ -39,45 +52,51 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-left-panel">
-        <div className="login-anim-shape shape-1"></div>
-        <div className="login-anim-shape shape-2"></div>
-        <div className="login-anim-shape shape-3"></div>
-        
-        <Link to="/" className="login-back-btn">
-          &larr; Back to Home
-        </Link>
-        <div className="login-logo-box">
-          <img src="/adanplogo.png" alt="ADANP Logo" className="login-logo" />
+
+    <>
+      <div
+        className="login-container"
+        ref={containerRef}
+        onMouseMove={handleMouseMove}
+      >
+        {/* Starfall Background Animation */}
+        <div className="starfall">
+          {Array.from({ length: 40 }).map((_, i) => (
+            <div key={i} className="falling-star"></div>
+          ))}
         </div>
-        <h2 className="login-tagline">ADVANCING NURSING: TRANSFORMING LIVES</h2>
-      </div>
-      <div className="login-right-panel">
+
         <div className="login-card-wrapper">
           <div className="login-card">
-            <h1 className="login-title">LOGIN</h1>
+            <div className="login-logo-header">
+              <img src={logo} alt="ADANP Logo" className="navbar-logo-img" />
+              <div className="navbar-logo-text">
+                <strong className="navbar-logo-title">ADANP</strong>
+                <span className="navbar-logo-subtitle">Association of Dermatology & Aesthetic Nurses of the Philippines</span>
+              </div>
+            </div>
+            <h1 className="login-title">Member Login</h1>
             {errorMsg && <div className="login-error-msg" style={{ color: '#ff4d4f', marginBottom: '1rem', fontSize: '14px', textAlign: 'center' }}>{errorMsg}</div>}
             {successMsg && <div className="login-success-msg" style={{ color: '#52c41a', marginBottom: '1rem', fontSize: '14px', textAlign: 'center' }}>{successMsg}</div>}
             <form onSubmit={handleLogin} className="login-form">
               <div className="login-input-group">
-                <input 
-                  type="email" 
-                  placeholder="Email" 
+                <input
+                  type="email"
+                  placeholder="Email"
                   className="login-input"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  required 
+                  required
                 />
               </div>
               <div className="login-input-group">
-                <input 
-                  type="password" 
-                  placeholder="Password" 
+                <input
+                  type="password"
+                  placeholder="Password"
                   className="login-input"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  required 
+                  required
                 />
                 <span className="login-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
@@ -91,7 +110,8 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 
