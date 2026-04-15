@@ -7,6 +7,10 @@ import './Login.css';
 
 const Login = () => {
   const navigate = useNavigate();
+  const [isRegister, setIsRegister] = useState(false);
+  const [fullName, setFullName] = useState('');
+  const [age, setAge] = useState('');
+  const [gender, setGender] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
@@ -41,12 +45,53 @@ const Login = () => {
       if (response.ok && data.status === "success") {
         setSuccessMsg(data.message);
         console.log('Login successful:', data.user);
-        navigate('/gallery-admin');
+        
+        // Persist user session
+        localStorage.setItem('user', JSON.stringify(data.user));
+        
+        // RBAC Routing based on role returned from backend
+        if (data.user?.role === 'admin_user') {
+          navigate('/admin-dashboard');
+        } else if (data.user?.role === 'non_members') {
+          navigate('/non-member-dashboard');
+        } else if (data.user?.role === 'members') {
+          navigate('/member-dashboard');
+        } else {
+          navigate('/gallery-admin'); // Fallback
+        }
       } else {
         setErrorMsg(data.message || "An error occurred during login.");
       }
     } catch (error) {
       console.error("Login Error:", error);
+      setErrorMsg("Failed to connect to the backend server. Is it running?");
+    }
+  };
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    setErrorMsg('');
+    setSuccessMsg('');
+
+    try {
+      const response = await fetch("http://localhost:8000/adanp-back/register.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ full_name: fullName, age, gender, email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.status === "success") {
+        setSuccessMsg("Registration successful! You can now login.");
+        setIsRegister(false); // Switch back to login
+      } else {
+        setErrorMsg(data.message || "An error occurred during registration.");
+      }
+    } catch (error) {
+      console.error("Registration Error:", error);
       setErrorMsg("Failed to connect to the backend server. Is it running?");
     }
   };
@@ -75,38 +120,64 @@ const Login = () => {
                 <span className="navbar-logo-subtitle">Association of Dermatology & Aesthetic Nurses of the Philippines</span>
               </div>
             </div>
-            <h1 className="login-title">Member Login</h1>
+            <h1 className="login-title">{isRegister ? "Register Account" : "Member Login"}</h1>
             {errorMsg && <div className="login-error-msg" style={{ color: '#ff4d4f', marginBottom: '1rem', fontSize: '14px', textAlign: 'center' }}>{errorMsg}</div>}
             {successMsg && <div className="login-success-msg" style={{ color: '#52c41a', marginBottom: '1rem', fontSize: '14px', textAlign: 'center' }}>{successMsg}</div>}
-            <form onSubmit={handleLogin} className="login-form">
-              <div className="login-input-group">
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="login-input"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="login-input-group">
-                <input
-                  type="password"
-                  placeholder="Password"
-                  className="login-input"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-                <span className="login-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                    <path fillRule="evenodd" d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z" clipRule="evenodd" />
-                  </svg>
-                </span>
-              </div>
-              <button type="submit" className="login-btn">Login</button>
-            </form>
-            <p className="login-forgot-password">Forgot Password?</p>
+            
+            {isRegister ? (
+              <form onSubmit={handleRegister} className="login-form">
+                <div className="login-input-group">
+                  <input type="text" placeholder="Full Name" className="login-input" value={fullName} onChange={(e) => setFullName(e.target.value)} required />
+                </div>
+                <div className="login-input-group">
+                  <input type="number" placeholder="Age" className="login-input" value={age} onChange={(e) => setAge(e.target.value)} required />
+                </div>
+                <div className="login-input-group">
+                  <select className="login-input" value={gender} onChange={(e) => setGender(e.target.value)} required>
+                    <option value="" disabled>Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div className="login-input-group">
+                  <input type="email" placeholder="Email" className="login-input" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                </div>
+                <div className="login-input-group">
+                  <input type="password" placeholder="Password" className="login-input" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                </div>
+                <button type="submit" className="login-btn">Register</button>
+              </form>
+            ) : (
+              <form onSubmit={handleLogin} className="login-form">
+                <div className="login-input-group">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    className="login-input"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="login-input-group">
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    className="login-input"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+                </div>
+                <button type="submit" className="login-btn">Login</button>
+                <p className="login-forgot-password">Forgot Password?</p>
+              </form>
+            )}
+
+            <p className="login-toggle-link" style={{ textAlign: 'center', marginTop: '15px', display: 'block', cursor: 'pointer', color: '#1f4172', fontWeight: '500' }} onClick={() => { setIsRegister(!isRegister); setErrorMsg(''); setSuccessMsg(''); }}>
+              {isRegister ? "Already have an account? Login here" : "Not a member? Register Now!"}
+            </p>
           </div>
         </div>
       </div>
