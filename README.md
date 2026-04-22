@@ -78,5 +78,5 @@ npm run dev
 
 The application will be available at `http://localhost:5173`.
 
-## 📄 License
+##  License
 This project is proprietary and intended for the exclusive use of ADANP.
