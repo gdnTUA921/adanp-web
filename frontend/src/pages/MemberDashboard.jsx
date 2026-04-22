@@ -58,7 +58,8 @@ const MemberDashboard = () => {
             </p>
             <div className="member-options" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '2rem' }}>
               <button className="nm-apply-btn" onClick={() => navigate('/gallery')}>View Gallery</button>
-              <button className="nm-apply-btn" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }}>Profile Settings</button>
+              <button className="nm-apply-btn" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }} onClick={() => navigate('/profile')}>Profile Settings</button>
+
             </div>
           </div>
         </main>

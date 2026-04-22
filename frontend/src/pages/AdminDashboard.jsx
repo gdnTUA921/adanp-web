@@ -122,7 +122,7 @@ const AdminDashboard = () => {
                             <button className="reject-btn" onClick={() => handleUpdateStatus(app.id, 'Reject')}>Reject</button>
                           </>
                         ) : (
-                          <span style={{color: '#a0aabf', fontSize: '0.9rem'}}>Processed</span>
+                          <span style={{color: '#666', fontSize: '0.9rem'}}>Processed</span>
                         )}
                       </td>
                     </tr>

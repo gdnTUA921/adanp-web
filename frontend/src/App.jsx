@@ -17,12 +17,39 @@ import Login from './pages/Login';
 import NonMemberDashboard from './pages/NonMemberDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import MemberDashboard from './pages/MemberDashboard';
+import Profile from './pages/Profile';
+import CPD from './pages/CPD';
+import Library from './pages/Library';
+import Videos from './pages/Videos';
+import Logbook from './pages/Logbook';
+import Legal from './pages/Legal';
+import Career from './pages/Career';
+import Forum from './pages/Forum';
+import Achievements from './pages/Achievements';
+
+
+
+
+
+
+
+
+
 
 function AppContent() {
   const location = useLocation();
   const isLoginPage = location.pathname === '/login';
   const isGalleryAdminPage = location.pathname === '/gallery-admin' || location.pathname === '/Gallery-admin';
-  const isDashboardPage = location.pathname.includes('dashboard');
+  const isDashboardPage = location.pathname.includes('dashboard') || location.pathname === '/profile' || location.pathname === '/cpd' || location.pathname === '/library' || location.pathname === '/videos' || location.pathname === '/logbook' || location.pathname === '/legal' || location.pathname === '/career' || location.pathname === '/forum' || location.pathname === '/achievements';
+
+
+
+
+
+
+
+
+
 
   return (
     <div className="app">
@@ -47,6 +74,24 @@ function AppContent() {
           <Route path="/non-member-dashboard" element={<NonMemberDashboard />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="/member-dashboard" element={<MemberDashboard />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/cpd" element={<CPD />} />
+          <Route path="/library" element={<Library />} />
+          <Route path="/videos" element={<Videos />} />
+          <Route path="/logbook" element={<Logbook />} />
+          <Route path="/legal" element={<Legal />} />
+          <Route path="/career" element={<Career />} />
+          <Route path="/forum" element={<Forum />} />
+          <Route path="/achievements" element={<Achievements />} />
+
+
+
+
+
+
+
+
+
         </Routes>
       </main>
       {!isLoginPage && !isGalleryAdminPage && !isDashboardPage && <Footer />}
